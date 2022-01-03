@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instruction Set Reference for the 6510 Microprocessor: NOP</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src vscode-resource: 'self' 'unsafe-inline'; font-src vscode-resource: ; img-src vscode-resource: ; style-src vscode-resource: 'self' 'unsafe-inline';" />
+  <link href="${stylesc64opcodesUri}" type="text/css" rel="stylesheet">
+  <script src="${scriptUri}"></script>
+  <style>
+    /*C64FONT*/
+  </style>
+</head>
+
+<body>
+  <!--
+  <script nonce="${nonce}" src="${scriptUri}"></script>
+	-->
+  <div id="page-container">
+    <div id="content-wrap">
+      <div class="TitleBlock"> <img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" align="left" class="center">
+        <h1 style="text-align:center; padding-top: 20px;">NOP</h1>
+        <h2 style="text-align:center; ">No OPeration</h2>
+        <h2 style="text-align:center; ">Operation: No Operation (2 cycles)</h2>
+      </div>
+      <br><br>
+
+      <table class='modes'>
+        <tr>
+          <th>
+            Mode
+          </th>
+          <th>
+            Syntax
+          </th>
+          <th>
+            HEX
+          </th>
+          <th>
+            LEN
+          </th>
+          <th>
+            TIME
+          </th>
+        </tr>
+        <tr>
+          <td>Implied</td>
+          <td>NOP</td>
+          <td>$EA</td>
+          <td>1</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <th colspan=5>
+            <table class='modes flags'>
+              <tr>
+                <td>N</td>
+                <td>V</td>
+                <td>&#151;</td>
+                <td>B</td>
+                <td>D</td>
+                <td>I</td>
+                <td>Z</td>
+                <td>C</td>
+              </tr>
+              <tr style="color: olivedrab;">
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+          </th>
+        </tr>
+      </table>
+
+      <p>Strangely enough, an instruction that does nothing could be more useful than it seems at first glance. This instruction, for the simple fact that spends execution clock cycles, namely 2, can be used to synchronize subroutines to reach a given number
+        of cycles. But the main task of this particular instruction is to facilitate debugging. It is very convenient to insert a few NOP instructions to "turn off" temporarily sections of code that we think may be causing problems or for patching sections
+        of code.</p>
+
+      <h2>Navigation:</h2>
+      <button class="button buttonOPCODE" onclick="cmdHOME()">Home</button>
+      <button class="button buttonOPCODE" onclick="cmdVIEWALL()">View All Opcodes List</button>
+      <button class="button buttonOPCODE" onclick="cmdOTHER()">View Other Instructions</button>
+    </div>
+    <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
+  </div>
+</body>
+
+</html>

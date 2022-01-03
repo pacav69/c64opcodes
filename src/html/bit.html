@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instruction Set Reference for the 6510 Microprocessor: BIT</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src vscode-resource: 'self' 'unsafe-inline'; font-src vscode-resource: ; img-src vscode-resource: ; style-src vscode-resource: 'self' 'unsafe-inline';" />
+  <link href="${stylesc64opcodesUri}" type="text/css" rel="stylesheet">
+  <script src="${scriptUri}"></script>
+  <style>
+    /*C64FONT*/
+  </style>
+</head>
+
+<body>
+  <!--
+  <script nonce="${nonce}" src="${scriptUri}"></script>
+	-->
+  <div id="page-container">
+    <div id="content-wrap">
+      <div class="TitleBlock"> <img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" align="left" class="center">
+        <h1 style="text-align:center; padding-top: 20px;">BIT</h1>
+        <h2 style="text-align:center; ">Test bits in memory with accumulator</h2>
+        <h2 style="text-align:center; ">Operation: A &amp; M, M7 =&gt; N, M6 =&gt; V</h2>
+      </div>
+      <br><br>
+
+      <table class='modes'>
+        <tr>
+          <th>
+            Mode
+          </th>
+          <th>
+            Syntax
+          </th>
+          <th>
+            HEX
+          </th>
+          <th>
+            LEN
+          </th>
+          <th>
+            TIME
+          </th>
+        </tr>
+        <tr>
+          <td>Zero Page</td>
+          <td>BIT $44</td>
+          <td>$24</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>Absolute</td>
+          <td>BIT $4400</td>
+          <td>$2C</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <th colspan=5>
+            <table class='modes flags'>
+              <tr>
+                <td>N</td>
+                <td>V</td>
+                <td>&#151;</td>
+                <td>B</td>
+                <td>D</td>
+                <td>I</td>
+                <td>Z</td>
+                <td>C</td>
+              </tr>
+              <tr style="color: olivedrab;">
+                <td>&#10003;</td>
+                <td>&#10003;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&#10003;</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+          </th>
+        </tr>
+      </table>
+
+      <p style="text-align:center;">The negative status flag is set if the result is negative, i.e. has its most significant bit set.<br>The overflow status flag is set if the operation results in an overflow.<br>The zero flag is set if the result is zero, or cleared if it is non-zero.</p>
+
+      <p>This instruction is a logic version of the compare instructions in which the contents of the accumulator is not modified but the flags are adjusted according to the obtained result.</p>
+
+      <p>Bit 6 (Overflow) and bit 7 (Negative) of accumulator is transferred to the P register if the result of A &amp; M = 0 then Z = 1, in other case Z = 0.</p>
+
+      <p>Is a form of testing important bits in the accumulator without affecting its contents, as would happen if we did this with and.</p>
+
+      <h2>Navigation:</h2>
+      <button class="button buttonOPCODE" onclick="cmdHOME()">Home</button>
+      <button class="button buttonOPCODE" onclick="cmdVIEWALL()">View All Opcodes List</button>
+      <button class="button buttonOPCODE" onclick="cmdCOMPARE()">Compare Instructions</button>
+    </div>
+    <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
+  </div>
+</body>
+
+</html>

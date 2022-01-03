@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instruction Set Reference for the 6510 Microprocessor: AND</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src vscode-resource: 'self' 'unsafe-inline'; font-src vscode-resource: ; img-src vscode-resource: ; style-src vscode-resource: 'self' 'unsafe-inline';" />
+  <link href="${stylesc64opcodesUri}" type="text/css" rel="stylesheet">
+  <script src="${scriptUri}"></script>
+  <style>
+    /*C64FONT*/
+  </style>
+</head>
+
+<body>
+  <!--
+  <script nonce="${nonce}" src="${scriptUri}"></script>
+	-->
+  <div id="page-container">
+    <div id="content-wrap">
+      <div class="TitleBlock"> <img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" align="left" class="center">
+        <h1 style="text-align:center; padding-top: 10px;">AND</h1>
+        <h2 style="text-align:center; ">Bitwise AND with Accumulator</h2>
+        <h2 style="text-align:center; ">Operation: A & M => A</h2>
+      </div>
+      <br><br>
+
+      <table class='modes'>
+        <tr>
+          <th>
+            Mode
+          </th>
+          <th>
+            Syntax
+          </th>
+          <th>
+            HEX
+          </th>
+          <th>
+            LEN
+          </th>
+          <th>
+            TIME
+          </th>
+        </tr>
+        <tr>
+          <td>Immediate</td>
+          <td>AND #$44</td>
+          <td>$29</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Zero Page</td>
+          <td>AND $44</td>
+          <td>$25</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>Zero Page,X</td>
+          <td>AND $44,X</td>
+          <td>$35</td>
+          <td>2</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Absolute</td>
+          <td>AND $4400</td>
+          <td>$2D</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Absolute,X</td>
+          <td>AND $4400,X</td>
+          <td>$3D</td>
+          <td>3</td>
+          <td>4+</td>
+        </tr>
+        <tr>
+          <td>Absolute,Y</td>
+          <td>AND $4400,Y</td>
+          <td>$39</td>
+          <td>3</td>
+          <td>4+</td>
+        </tr>
+        <tr>
+          <td>(Indirect,X)</td>
+          <td>AND ($44,X)</td>
+          <td>$21</td>
+          <td>2</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>(Indirect),Y</td>
+          <td>AND ($44),Y</td>
+          <td>$31</td>
+          <td>2</td>
+          <td>5+</td>
+        </tr>
+        <tr>
+          <th colspan=5>
+            <table class='modes flags'>
+              <tr>
+                <td>N</td>
+                <td>V</td>
+                <td>&#151;</td>
+                <td>B</td>
+                <td>D</td>
+                <td>I</td>
+                <td>Z</td>
+                <td>C</td>
+              </tr>
+              <tr style="color: olivedrab;">
+                <td>&#10003;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&#10003;</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+          </th>
+        </tr>
+      </table>
+
+      <p style="text-align:center;">+ add 1 cycle if page boundary crossed.<br>The negative flag is set if the result is negative, i.e. has its most significant bit set.<br>The zero flag is set if the result is zero, or cleared if it is non-zero.</p>
+
+      <p>Performs a logical AND between the bits of the accumulator and that of the operand specified (next byte of the opcode in immediate addressing). The result of AND operations will be 1 only when both bits compared are 1, else will be always 0.</p>
+
+      <p>A common usage for this instruction is to deactivate (reset) a particular bit or set of bits within a bit mask, i.e. puting zeros in the bit places we want to reset (bit = 0) and ones in the places we want to be unaltered. To activate bits we will
+        use ora with a the contrary bit patter for the mask: one in the bits we need to activate and zeros in the bits we need to be unaltered.</p>
+
+      <p>Example, if we want to deactivate bit 5 (and only this bit) in the variable "value":</p>
+
+      <div class="codeblock">
+        <pre style="margin: 0;">
+    <span style="color: #eeeb42; font-weight: bold">lda</span><span style="color: white;"> value </span><span style="color: #83f383;">       // Loads value in Accumulator</span>
+    <span style="color: #eeeb42; font-weight: bold">and</span><span style="color: salmon;"> #</span><span style="color: powderblue;">%11011111</span><span style="color: #83f383;">   // Mask: zero in bit 5, ones in the others.</span>
+    <span style="color: #eeeb42; font-weight: bold">sta</span><span style="color: white;"> value </span><span style="color: #83f383;">       // Updates value (with bit 5 off)</span>
+          </pre>
+      </div>
+
+      <h2>Navigation:</h2>
+      <button class="button buttonOPCODE" onclick="cmdHOME()">Home</button>
+      <button class="button buttonOPCODE" onclick="cmdVIEWALL()">View All Opcodes List</button>
+      <button class="button buttonOPCODE" onclick="cmdBITWISE()">Bitwise Instructions</button>
+    </div>
+    <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
+  </div>
+</body>
+
+</html>

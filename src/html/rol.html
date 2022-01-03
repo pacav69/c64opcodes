@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instruction Set Reference for the 6510 Microprocessor: ROL</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src vscode-resource: 'self' 'unsafe-inline'; font-src vscode-resource: ; img-src vscode-resource: ; style-src vscode-resource: 'self' 'unsafe-inline';" />
+  <link href="${stylesc64opcodesUri}" type="text/css" rel="stylesheet">
+  <script src="${scriptUri}"></script>
+  <style>
+    /*C64FONT*/
+  </style>
+</head>
+
+<body>
+  <!--
+  <script nonce="${nonce}" src="${scriptUri}"></script>
+	-->
+  <div id="page-container">
+    <div id="content-wrap">
+      <div class="TitleBlock"> <img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" align="left" class="center">
+        <h1 style="text-align:center; padding-top: 20px;">ROL</h1>
+        <h2 style="text-align:center; ">Rotate One bit Left - Memory or Accumulator</h2>
+        <h2 style="text-align:center; ">Operation: C &lt;= <span style="background-color: #867BE4;">7 6 5 4 3 2 1 0</span> &lt;= C</h2>
+      </div>
+      <br><br>
+
+      <table class='modes'>
+        <tr>
+          <th>
+            Mode
+          </th>
+          <th>
+            Syntax
+          </th>
+          <th>
+            HEX
+          </th>
+          <th>
+            LEN
+          </th>
+          <th>
+            TIME
+          </th>
+        </tr>
+        <tr>
+          <td>Accumulator</td>
+          <td>ROL</td>
+          <td>$2A</td>
+          <td>1</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Zero Page</td>
+          <td>ROL $44</td>
+          <td>$26</td>
+          <td>2</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Zero Page,X</td>
+          <td>ROL $44,X</td>
+          <td>$36</td>
+          <td>2</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>Absolute</td>
+          <td>ROL $4400</td>
+          <td>$2E</td>
+          <td>3</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>Absolute,X</td>
+          <td>ROL $4400,X</td>
+          <td>$3E</td>
+          <td>3</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <th colspan=5>
+            <table class='modes flags'>
+              <tr>
+                <td>N</td>
+                <td>V</td>
+                <td>&#151;</td>
+                <td>B</td>
+                <td>D</td>
+                <td>I</td>
+                <td>Z</td>
+                <td>C</td>
+              </tr>
+              <tr style="color: olivedrab;">
+                <td>&#10003;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&#10003;</td>
+                <td>&#10003;</td>
+              </tr>
+            </table>
+          </th>
+        </tr>
+      </table>
+
+      <p style="text-align:center;">The negative status flag is set if the result is negative, i.e. has its most significant bit set.<br>The zero flag is set if the result is zero, or cleared if it is non-zero.<br>The carry flag is set or cleared depending on the result.</p>
+
+      <p>Displaces to the left the bits from the accumulator or a given memory address (in the opposite way of this counterpart instruction ROR.</p>
+
+      <p>The current value of the carry is put into the bit 0, and bit 7 is put into the carry. This makes effectively a circular displacement over 9 bits.</p>
+
+      <h2>Navigation:</h2>
+      <button class="button buttonOPCODE" onclick="cmdHOME()">Home</button>
+      <button class="button buttonOPCODE" onclick="cmdVIEWALL()">View All Opcodes List</button>
+      <button class="button buttonOPCODE" onclick="cmdBITWISE()">Bitwise Instructions</button>
+    </div>
+    <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
+  </div>
+</body>
+
+</html>

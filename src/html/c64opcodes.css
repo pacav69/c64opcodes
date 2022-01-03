@@ -1,0 +1,188 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  margin: 0;
+  text-align: left;
+  color: var(--vscode-foreground);
+  background-color: var(--vscode-editor-background);
+}
+
+
+/*----------------------------------[ THEMES ]-----------------------------------*/
+
+body.vscode-light {
+  color: black;
+}
+
+body.vscode-dark {
+  /* color: var(--vscode-editor-foreground); */
+  font-size: var(--vscode-editor-font-size);
+  color: darkseagreen;
+  background-color: rgb(31, 31, 37);
+}
+
+body.vscode-dark h1 {
+  font-size: xx-large;
+}
+
+body.vscode-dark h2 {
+  font-size: x-large;
+}
+
+body.vscode-dark h3 {
+  font-size: larger;
+}
+
+body.vscode-dark h4 {
+  font-size: large;
+}
+
+body.vscode-dark h5 {
+  font-size: medium;
+}
+
+body.vscode-dark h6 {
+  font-size: small;
+}
+
+body.vscode-high-contrast {
+  color: red;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+  /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  text-align: right;
+  color: #79fada;
+  font-size: medium;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+/*----------------------------------[ BACKGROUND BLOCKS ]-----------------------------------*/
+
+.codeblock {
+  border: solid gray;
+  background-color: #192725;
+  border-width: .1em .1em .1em .4em;
+  line-height: 150%;
+  padding-top: 12pt;
+}
+
+.TitleBlock {
+  height: 180px;
+  width: 100%;
+  background-color: #3E32A2;
+  color: gold;
+}
+
+.OpcodeBack {
+  height: 475px;
+  width: 350px;
+  background-color: #4242b3;
+  border-radius: 5%;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.HomeButtonBack {
+  height: 540px;
+  width: 260px;
+  background-color: #266e6e;
+  border-radius: 8%;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+/*----------------------------------[ TABLES ]-----------------------------------*/
+
+table.modes {
+  border: 4px solid #3E32A2;
+  border-collapse: separate;
+  border-radius: 5px;
+  border-left-width: 5px;
+  border-top-width: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  border-left: 1;
+  border-spacing: 0px;
+  color: tan;
+  background-color: #192725;
+}
+
+table.modes th {
+  background-color: #3E32A2;
+  color: gold;
+}
+
+table.modes.flags {
+  background-color: #192725;
+  text-align: center;
+}
+
+table.modes th,
+table.modes td {
+  text-align: center;
+  border: 0px solid #3E32A2;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  padding: 10px;
+  font-size: small;
+}
+
+
+/*----------------------------------[ BUTTONS ]-----------------------------------*/
+
+.button {
+  border: 3px solid #f0cb86;
+  color: rgb(124, 188, 204);
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.buttonNAVIGATION {
+  background-color: white;
+  color: black;
+  width: 200px;
+}
+
+.buttonNAVIGATION:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.buttonOPCODE {
+  background-color: white;
+  color: black;
+}
+
+.buttonOPCODE:hover {
+  background-color: #008CBA;
+  color: white;
+}
