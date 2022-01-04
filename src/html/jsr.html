@@ -21,8 +21,8 @@
     <div id="content-wrap">
       <div class="TitleBlock"> <img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" align="left" class="center">
         <h1 style="text-align:center; padding-top: 20px;">JSR</h1>
-        <h2 style="text-align:center; ">Jump to SubRoutine saving return address</h2>
-        <h4 style="text-align:center; ">Operation: (PC+2) to stack, (PC+1) =&gt; PCH, (PC+2) =&gt; PC</h4>
+        <h2 style="text-align:center;">Jump to SubRoutine saving return address</h2>
+        <h4 style="text-align:center;">Operation: (PC+2) to stack, (PC+1) =&gt; PCH, (PC+2) =&gt; PC</h4>
       </div>
       <br><br>
 
@@ -87,10 +87,10 @@
       <p>Subroutines are very important in machine code programming. They allow the use of repetitive sections of code written only one time in our program. They're also invaluable to make our programs more structured. However JSR should be avoided if a
         subroutine need to be optimized for speed since the -undivisible- JSR/RTS pair is expensive in terms of clock cycles.</p>
 
-      <h2>Navigation:</h2>
-      <button class="button buttonOPCODE" onclick="cmdHOME()">Home</button>
-      <button class="button buttonOPCODE" onclick="cmdVIEWALL()">View All Opcodes List</button>
-      <button class="button buttonOPCODE" onclick="cmdJUMP()">Jump Instructions</button>
+      <h2 style="margin-left: 15px;">Navigation:</h2>
+      <button style="margin-left: 15px;" title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
+      <button style="margin-left: 15px;" title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
+      <button style="margin-left: 15px;" title="View List of All Jump Instructions" class="button buttonNAVIGATION" onclick="cmdJUMP()">Jump Instructions</button>
     </div>
     <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
   </div>

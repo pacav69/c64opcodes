@@ -1,9 +1,19 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   text-align: left;
   color: var(--vscode-foreground);
   background-color: var(--vscode-editor-background);
+}
+
+body p {
+  margin: 15px;
 }
 
 
@@ -58,14 +68,21 @@ body.vscode-high-contrast {
   /* Footer height */
 }
 
+#body {
+  margin-left: 265px;
+  min-height: 640px;
+}
+
 #footer {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
-  height: 2.5rem;
-  text-align: right;
+  height: 20px;
+  text-align: center;
   color: #79fada;
-  font-size: medium;
+  background-color: #4242b3;
+  font-size: large;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -83,8 +100,10 @@ body.vscode-high-contrast {
 .TitleBlock {
   height: 180px;
   width: 100%;
+  left: 0px;
   background-color: #3E32A2;
   color: gold;
+  text-align: center;
 }
 
 .OpcodeBack {
@@ -100,14 +119,22 @@ body.vscode-high-contrast {
 }
 
 .HomeButtonBack {
-  height: 540px;
-  width: 260px;
+  width: 264px;
   background-color: #266e6e;
-  border-radius: 8%;
-  position: fixed;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 181px;
+  left: 0px;
+  bottom: 20px;
+  text-align: center;
+}
+
+.AllButtonBack {
+  width: 100%;
+  background-color: #266e6e;
+  position: absolute;
+  top: 181px;
+  left: 0px;
+  bottom: 20px;
   text-align: center;
 }
 
@@ -152,7 +179,7 @@ table.modes td {
 /*----------------------------------[ BUTTONS ]-----------------------------------*/
 
 .button {
-  border: 3px solid #f0cb86;
+  border: 3px solid #eeb63d;
   color: rgb(124, 188, 204);
   padding: 4px 8px;
   text-align: center;
@@ -160,19 +187,19 @@ table.modes td {
   display: inline-block;
   font-size: 14px;
   font-weight: bold;
-  margin: 4px 2px;
+  margin: 8px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
   border-radius: 4px;
 }
 
-.buttonNAVIGATION {
+.buttonMAIN {
   background-color: white;
   color: black;
   width: 200px;
 }
 
-.buttonNAVIGATION:hover {
+.buttonMAIN:hover {
   background-color: #008CBA;
   color: white;
 }
@@ -180,9 +207,20 @@ table.modes td {
 .buttonOPCODE {
   background-color: white;
   color: black;
+  width: 75px;
 }
 
 .buttonOPCODE:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.buttonNAVIGATION {
+  background-color: white;
+  color: black;
+}
+
+.buttonNAVIGATION:hover {
   background-color: #008CBA;
   color: white;
 }

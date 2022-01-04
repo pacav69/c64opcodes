@@ -21,8 +21,8 @@ window.addEventListener('message', event => {
 
 function cmdHOME() {
     vscode.postMessage({
-        command: "welcome",
-        pageTitle: "Welcome Home Page"
+        command: "index",
+        pageTitle: "Welcome"
     });
 }
 
@@ -232,279 +232,279 @@ function cmdCLI() {
 function cmdCLV() {
     vscode.postMessage({
         command: "clv",
-        pageTitle: "CLV BUTTON PRESSED!"
+        pageTitle: "CLV"
     });
 }
 
 function cmdCMP() {
     vscode.postMessage({
         command: "cmp",
-        pageTitle: "CMP BUTTON PRESSED!"
+        pageTitle: "CMP"
     });
 }
 
 function cmdCPX() {
     vscode.postMessage({
         command: "cpx",
-        pageTitle: "CPX BUTTON PRESSED!"
+        pageTitle: "CPX"
     });
 }
 
 function cmdCPY() {
     vscode.postMessage({
         command: "cpy",
-        pageTitle: "CPY BUTTON PRESSED!"
+        pageTitle: "CPY"
     });
 }
 
 function cmdDEC() {
     vscode.postMessage({
         command: "dec",
-        pageTitle: "DEC BUTTON PRESSED!"
+        pageTitle: "DEC"
     });
 }
 
 function cmdDEX() {
     vscode.postMessage({
         command: "dex",
-        pageTitle: "DEX BUTTON PRESSED!"
+        pageTitle: "DEX"
     });
 }
 
 function cmdDEY() {
     vscode.postMessage({
         command: "dey",
-        pageTitle: "DEY BUTTON PRESSED!"
+        pageTitle: "DEY"
     });
 }
 
 function cmdEOR() {
     vscode.postMessage({
         command: "eor",
-        pageTitle: "EOR BUTTON PRESSED!"
+        pageTitle: "EOR"
     });
 }
 
 function cmdINC() {
     vscode.postMessage({
         command: "inc",
-        pageTitle: "INC BUTTON PRESSED!"
+        pageTitle: "INC"
     });
 }
 
 function cmdINX() {
     vscode.postMessage({
         command: "inx",
-        pageTitle: "INX BUTTON PRESSED!"
+        pageTitle: "INX"
     });
 }
 
 function cmdINY() {
     vscode.postMessage({
         command: "iny",
-        pageTitle: "INY BUTTON PRESSED!"
+        pageTitle: "INY"
     });
 }
 
 function cmdJMP() {
     vscode.postMessage({
         command: "jmp",
-        pageTitle: "JMP BUTTON PRESSED!"
+        pageTitle: "JMP"
     });
 }
 
 function cmdJSR() {
     vscode.postMessage({
         command: "jsr",
-        pageTitle: "JSR BUTTON PRESSED!"
+        pageTitle: "JSR"
     });
 }
 
 function cmdLDA() {
     vscode.postMessage({
         command: "lda",
-        pageTitle: "LDA BUTTON PRESSED!"
+        pageTitle: "LDA"
     });
 }
 
 function cmdLDX() {
     vscode.postMessage({
         command: "ldx",
-        pageTitle: "LDX BUTTON PRESSED!"
+        pageTitle: "LDX"
     });
 }
 
 function cmdLDY() {
     vscode.postMessage({
         command: "ldy",
-        pageTitle: "LDY BUTTON PRESSED!"
+        pageTitle: "LDY"
     });
 }
 
 function cmdLSR() {
     vscode.postMessage({
         command: "lsr",
-        pageTitle: "LSR BUTTON PRESSED!"
+        pageTitle: "LSR"
     });
 }
 
 function cmdNOP() {
     vscode.postMessage({
         command: "nop",
-        pageTitle: "NOP BUTTON PRESSED!"
+        pageTitle: "NOP"
     });
 }
 
 function cmdORA() {
     vscode.postMessage({
         command: "ora",
-        pageTitle: "ORA BUTTON PRESSED!"
+        pageTitle: "ORA"
     });
 }
 
 function cmdPHA() {
     vscode.postMessage({
         command: "pha",
-        pageTitle: "PHA BUTTON PRESSED!"
+        pageTitle: "PHA"
     });
 }
 
 function cmdPHP() {
     vscode.postMessage({
         command: "php",
-        pageTitle: "PHP BUTTON PRESSED!"
+        pageTitle: "PHP"
     });
 }
 
 function cmdPLA() {
     vscode.postMessage({
         command: "pla",
-        pageTitle: "PLA BUTTON PRESSED!"
+        pageTitle: "PLA"
     });
 }
 
 function cmdPLP() {
     vscode.postMessage({
         command: "plp",
-        pageTitle: "PLP BUTTON PRESSED!"
+        pageTitle: "PLP"
     });
 }
 
 function cmdROL() {
     vscode.postMessage({
         command: "rol",
-        pageTitle: "ROL BUTTON PRESSED!"
+        pageTitle: "ROL"
     });
 }
 
 function cmdROR() {
     vscode.postMessage({
         command: "ror",
-        pageTitle: "ROR BUTTON PRESSED!"
+        pageTitle: "ROR"
     });
 }
 
 function cmdRTI() {
     vscode.postMessage({
         command: "rti",
-        pageTitle: "RTI BUTTON PRESSED!"
+        pageTitle: "RTI"
     });
 }
 
 function cmdRTS() {
     vscode.postMessage({
         command: "rts",
-        pageTitle: "RTS BUTTON PRESSED!"
+        pageTitle: "RTS"
     });
 }
 
 function cmdSBC() {
     vscode.postMessage({
         command: "sbc",
-        pageTitle: "SBC BUTTON PRESSED!"
+        pageTitle: "SBC"
     });
 }
 
 function cmdSEC() {
     vscode.postMessage({
         command: "sec",
-        pageTitle: "SEC BUTTON PRESSED!"
+        pageTitle: "SEC"
     });
 }
 
 function cmdSED() {
     vscode.postMessage({
         command: "sed",
-        pageTitle: "SED BUTTON PRESSED!"
+        pageTitle: "SED"
     });
 }
 
 function cmdSEI() {
     vscode.postMessage({
         command: "sei",
-        pageTitle: "SEI BUTTON PRESSED!"
+        pageTitle: "SEI"
     });
 }
 
 function cmdSTA() {
     vscode.postMessage({
         command: "sta",
-        pageTitle: "STA BUTTON PRESSED!"
+        pageTitle: "STA"
     });
 }
 
 function cmdSTX() {
     vscode.postMessage({
         command: "stx",
-        pageTitle: "STX BUTTON PRESSED!"
+        pageTitle: "STX"
     });
 }
 
 function cmdSTY() {
     vscode.postMessage({
         command: "sty",
-        pageTitle: "STY BUTTON PRESSED!"
+        pageTitle: "STY"
     });
 }
 
 function cmdTAX() {
     vscode.postMessage({
         command: "tax",
-        pageTitle: "TAX BUTTON PRESSED!"
+        pageTitle: "TAX"
     });
 }
 
 function cmdTAY() {
     vscode.postMessage({
         command: "tay",
-        pageTitle: "TAY BUTTON PRESSED!"
+        pageTitle: "TAY"
     });
 }
 
 function cmdTSX() {
     vscode.postMessage({
         command: "tsx",
-        pageTitle: "TSX BUTTON PRESSED!"
+        pageTitle: "TSX"
     });
 }
 
 function cmdTXA() {
     vscode.postMessage({
         command: "txa",
-        pageTitle: "TXA BUTTON PRESSED!"
+        pageTitle: "TXA"
     });
 }
 
 function cmdTXS() {
     vscode.postMessage({
         command: "txs",
-        pageTitle: "TXS BUTTON PRESSED!"
+        pageTitle: "TXS"
     });
 }
 
 function cmdTYA() {
     vscode.postMessage({
         command: "tya",
-        pageTitle: "TYA BUTTON PRESSED!"
+        pageTitle: "TYA"
     });
 }

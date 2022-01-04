@@ -116,7 +116,7 @@ export function activate(context: vscode.ExtensionContext) {
     //----------------------------
     // Otherwise display Home Page
     } else {
-      const htmlFilePath: vscode.Uri = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', 'welcome.html'));
+      const htmlFilePath: vscode.Uri = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', 'index.html'));
       var localhtml = fs.readFileSync(htmlFilePath.fsPath, 'utf8').toString();
 //      webviewPanel.webview.html = getOpcodeHomeContent();
       localhtml = localhtml.replace('${stylesc64opcodesUri}', stylesc64opcodesUri.toString());
