@@ -26,6 +26,13 @@ function cmdHOME() {
     });
 }
 
+function cmdTEST() {
+    vscode.postMessage({
+        command: "test",
+        pageTitle: "Test Page"
+    });
+}
+
 function cmdVIEWALL() {
     vscode.postMessage({
         command: "viewall",
