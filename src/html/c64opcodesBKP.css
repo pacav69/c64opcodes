@@ -1,15 +1,19 @@
-:root {
-  --main-bg-color-light: rgb(10, 24, 17);
-  --main-bg-color-dark: rgb(10, 24, 17);
-  --main-bg-color-high: rgb(10, 24, 17);
-  --main-text-color-light: darkseagreen;
-  --main-text-color-dark: darkseagreen;
-  --main-text-color-high: darkseagreen;
-}
-
 * {
   margin: 0px;
   padding: 0px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left;
+  color: var(--vscode-foreground);
+  background-color: var(--vscode-editor-background);
+}
+
+body p {
+  margin: 15px;
 }
 
 
@@ -22,9 +26,8 @@ body.vscode-light {
 body.vscode-dark {
   /* color: var(--vscode-editor-foreground); */
   font-size: var(--vscode-editor-font-size);
-  /* color: darkseagreen; */
-  background-color: var(--main-bg-color-dark);
-  color: var(--main-text-color-dark);
+  color: darkseagreen;
+  background-color: rgb(31, 31, 37);
 }
 
 body.vscode-dark h1 {
@@ -55,123 +58,89 @@ body.vscode-high-contrast {
   color: red;
 }
 
-
-/*----------------------------------[ ELEMENTS ]-----------------------------------*/
-
-body {
-  margin: 0 !important;
-  padding: 0 !important;
-  font-size: var(--vscode-editor-font-size);
-}
-
 #page-container {
   position: relative;
   min-height: 100vh;
 }
 
 #content-wrap {
-  padding-bottom: 1.5rem;
+  padding-bottom: 2.5rem;
   /* Footer height */
 }
 
-#header {
-  height: 180px;
+#body {
+  margin-left: 265px;
+  min-height: 640px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  left: 0px;
-  background-color: #3E32A2;
-  color: gold;
+  height: 20px;
   text-align: center;
-  float: left;
+  color: #79fada;
+  background-color: #4242b3;
+  font-size: large;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-#header-text {
-  margin-top: 15px;
+#left {
+  text-align: left;
 }
 
-#header-image {
-  float: left;
-}
 
-#sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  padding-top: 20px;
-  top: 180px;
-  bottom: 1.5rem;
-  width: 264px;
-  overflow: auto;
-  background-color: #266e6e;
-  text-align: center;
-}
-
-#home-body {
-  display: flex;
-  position: absolute;
-  top: 180px;
-  bottom: 1.5rem;
-  margin-left: 264px;
-  min-width: calc(100% - 264px);
-  overflow: auto;
-  background-color: var(--main-bg-color);
-}
-
-.opcode-table {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  clear: both;
-  text-align: center;
-}
-
-.opcode body {
-  top: 180px;
-  bottom: 1.5rem;
-  margin-left: 264px;
-  min-width: calc(100% - 264px);
-  overflow: auto;
-  background-color: var(--main-bg-color);
-}
-
-.opcode-flags {
-  padding-bottom: 20px;
-  text-align: center;
-}
-
-.opcode-text {
-  padding-left: 15px;
-  padding-bottom: 15px;
-}
-
-.opcode-text p {
-  padding-bottom: 1em;
-}
+/*----------------------------------[ BACKGROUND BLOCKS ]-----------------------------------*/
 
 .codeblock {
   border: solid gray;
   background-color: #192725;
   border-width: .1em .1em .1em .4em;
   line-height: 150%;
-  left: 0%;
-  padding-top: 25px;
-  margin-bottom: 15px;
+  padding-top: 12pt;
 }
 
-#navigation {
-  padding-left: 15px;
-  padding-bottom: 15px;
-}
-
-#footer {
-  position: absolute;
-  bottom: 0;
+.TitleBlock {
+  height: 180px;
   width: 100%;
-  height: 1.5rem;
+  left: 0px;
+  background-color: #3E32A2;
+  color: gold;
   text-align: center;
-  color: #79fada;
+}
+
+.OpcodeBack {
+  height: 475px;
+  width: 350px;
   background-color: #4242b3;
-  font-size: large;
-  /* Footer height */
+  border-radius: 5%;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.HomeButtonBack {
+  width: 264px;
+  background-color: #266e6e;
+  position: absolute;
+  top: 181px;
+  left: 0px;
+  bottom: 20px;
+  text-align: center;
+  float: left;
+}
+
+.AllButtonBack {
+  width: 100%;
+  background-color: #266e6e;
+  position: absolute;
+  top: 181px;
+  left: 0px;
+  bottom: 20px;
+  text-align: center;
 }
 
 
@@ -215,7 +184,7 @@ table.modes td {
 /*----------------------------------[ BUTTONS ]-----------------------------------*/
 
 .button {
-  border: 2px solid #eeb63d;
+  border: 3px solid #eeb63d;
   color: rgb(124, 188, 204);
   padding: 4px 8px;
   text-align: center;
@@ -223,7 +192,7 @@ table.modes td {
   display: inline-block;
   font-size: 14px;
   font-weight: bold;
-  margin: 2px 2px;
+  margin: 8px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
   border-radius: 4px;

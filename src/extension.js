@@ -58,11 +58,6 @@ function activate(context) {
         const stylesc64opcodesPath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', 'c64opcodes.css'));
         // Uri to load styles into webview
         const stylesc64opcodesUri = (stylesc64opcodesPath).with({ 'scheme': 'vscode-resource' });
-        //---------------------------------
-        // Get path to CSS resource on disk
-        const stylesc64opcodesTESTPath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', 'c64opcodesTEST.css'));
-        // Uri to load styles into webview
-        const stylesc64opcodesTESTUri = (stylesc64opcodesTESTPath).with({ 'scheme': 'vscode-resource' });
         //----------------------------------------------
         // Get path to C64 screen image resource on disk
         const imgc64screenPath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', 'c64_mainscreen.gif'));
@@ -85,7 +80,6 @@ function activate(context) {
             const htmlFilePath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', lowWordText + '.html'));
             var localhtml = fs.readFileSync(htmlFilePath.fsPath, 'utf8').toString();
             localhtml = localhtml.replace('${stylesc64opcodesUri}', stylesc64opcodesUri.toString());
-            localhtml = localhtml.replace('${stylesc64opcodesTESTUri}', stylesc64opcodesTESTUri.toString());
             localhtml = localhtml.replace('${scriptUri}', scriptUri.toString());
             //      localhtml = localhtml.replace('${nonce}', nonce);
             if (useC64Font) {
@@ -103,7 +97,6 @@ function activate(context) {
             var localhtml = fs.readFileSync(htmlFilePath.fsPath, 'utf8').toString();
             //      webviewPanel.webview.html = getOpcodeHomeContent();
             localhtml = localhtml.replace('${stylesc64opcodesUri}', stylesc64opcodesUri.toString());
-            localhtml = localhtml.replace('${stylesc64opcodesTESTUri}', stylesc64opcodesTESTUri.toString());
             localhtml = localhtml.replace('${scriptUri}', scriptUri.toString());
             //      localhtml = localhtml.replace('${nonce}', nonce);
             localhtml = localhtml.replace('${imgc64screenUri}', imgc64screenUri.toString());
@@ -123,7 +116,6 @@ function activate(context) {
                 const filePath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', message.command + '.html'));
                 var localhtml = fs.readFileSync(filePath.fsPath, 'utf8').toString();
                 localhtml = localhtml.replace('${stylesc64opcodesUri}', stylesc64opcodesUri.toString());
-                localhtml = localhtml.replace('${stylesc64opcodesTESTUri}', stylesc64opcodesTESTUri.toString());
                 localhtml = localhtml.replace('${scriptUri}', scriptUri.toString());
                 //        localhtml = localhtml.replace('${nonce}', nonce);
                 localhtml = localhtml.replace('${imgc64screenUri}', imgc64screenUri.toString());

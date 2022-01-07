@@ -16,142 +16,147 @@
 <body>
   <div id="page-container">
     <div id="content-wrap">
-      <div class="TitleBlock"> <img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" align="left" class="center">
-        <h1 style="text-align:center; padding-top: 10px;">ADC</h1>
-        <h2 style="text-align:center; ">Add Memory to Accumulator with Carry</h2>
-        <h2 style="text-align:center; ">Operation: A + M + C => A, C</h2>
+      <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
+        <h1>ADC</h1>
+        <h3>Add Memory to Accumulator with Carry</h3>
+        <h3>Operation: A + M + C => A, C</h3>
       </div>
-      <br><br>
 
-      <table class='modes'>
-        <tr>
-          <th>
-            Mode
-          </th>
-          <th>
-            Syntax
-          </th>
-          <th>
-            HEX
-          </th>
-          <th>
-            LEN
-          </th>
-          <th>
-            TIME
-          </th>
-        </tr>
-        <tr>
-          <td>Immediate</td>
-          <td>ADC #$44</td>
-          <td>$69</td>
-          <td>2</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Zero Page</td>
-          <td>ADC $44</td>
-          <td>$65</td>
-          <td>2</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>Zero Page,X</td>
-          <td>ADC $44,X</td>
-          <td>$75</td>
-          <td>2</td>
-          <td>4</td>
-        </tr>
-        <tr>
-          <td>Absolute</td>
-          <td>ADC $4400</td>
-          <td>$6D</td>
-          <td>3</td>
-          <td>4</td>
-        </tr>
-        <tr>
-          <td>Absolute,X</td>
-          <td>ADC $4400,X</td>
-          <td>$7D</td>
-          <td>3</td>
-          <td>4+</td>
-        </tr>
-        <tr>
-          <td>Absolute,Y</td>
-          <td>ADC $4400,Y</td>
-          <td>$79</td>
-          <td>3</td>
-          <td>4+</td>
-        </tr>
-        <tr>
-          <td>(Indirect,X)</td>
-          <td>ADC ($44,X)</td>
-          <td>$61</td>
-          <td>2</td>
-          <td>6</td>
-        </tr>
-        <tr>
-          <td>(Indirect),Y</td>
-          <td>ADC ($44),Y</td>
-          <td>$71</td>
-          <td>2</td>
-          <td>5+</td>
-        </tr>
-        <tr>
-          <th colspan=5>
-            <table class='modes flags'>
-              <tr>
-                <td>N</td>
-                <td>V</td>
-                <td>&#151;</td>
-                <td>B</td>
-                <td>D</td>
-                <td>I</td>
-                <td>Z</td>
-                <td>C</td>
-              </tr>
-              <tr style="color: olivedrab;">
-                <td>&#10003;</td>
-                <td>&#10003;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&#10003;</td>
-                <td>&#10003;</td>
-              </tr>
-            </table>
-          </th>
-        </tr>
-      </table>
+      <div class="opcode-table">
+        <table class='modes'>
+          <tr>
+            <th>
+              Mode
+            </th>
+            <th>
+              Syntax
+            </th>
+            <th>
+              HEX
+            </th>
+            <th>
+              LEN
+            </th>
+            <th>
+              TIME
+            </th>
+          </tr>
+          <tr>
+            <td>Immediate</td>
+            <td>ADC #$44</td>
+            <td>$69</td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Zero Page</td>
+            <td>ADC $44</td>
+            <td>$65</td>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Zero Page,X</td>
+            <td>ADC $44,X</td>
+            <td>$75</td>
+            <td>2</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Absolute</td>
+            <td>ADC $4400</td>
+            <td>$6D</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Absolute,X</td>
+            <td>ADC $4400,X</td>
+            <td>$7D</td>
+            <td>3</td>
+            <td>4+</td>
+          </tr>
+          <tr>
+            <td>Absolute,Y</td>
+            <td>ADC $4400,Y</td>
+            <td>$79</td>
+            <td>3</td>
+            <td>4+</td>
+          </tr>
+          <tr>
+            <td>(Indirect,X)</td>
+            <td>ADC ($44,X)</td>
+            <td>$61</td>
+            <td>2</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>(Indirect),Y</td>
+            <td>ADC ($44),Y</td>
+            <td>$71</td>
+            <td>2</td>
+            <td>5+</td>
+          </tr>
+          <tr>
+            <th colspan=5>
+              <table class='modes flags'>
+                <tr>
+                  <td>N</td>
+                  <td>V</td>
+                  <td>&#151;</td>
+                  <td>B</td>
+                  <td>D</td>
+                  <td>I</td>
+                  <td>Z</td>
+                  <td>C</td>
+                </tr>
+                <tr style="color: olivedrab;">
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+              </table>
+            </th>
+          </tr>
+        </table>
+      </div>
 
-      <p style="text-align:center;">+ add 1 cycle if page boundary crossed.<br>The negative flag is set if the result is negative, i.e. has it's most significant bit set (not in decimal mode).<br>The overflow flag is set if the operation results in an overflow (not in decimal mode).<br>The
-        zero flag is set if the result is zero, or cleared if it is non-zero (not in decimal mode).<br>The carry flag is set if the addition resulted in an outgoing carry.</p>
+      <div class="opcode-flags">
+        <p>+ add 1 cycle if page boundary crossed.<br>The negative flag is set if the result is negative, i.e. has it's most significant bit set (not in decimal mode).<br>The overflow flag is set if the operation results in an overflow (not in decimal mode).
+          <br>The zero flag is set if the result is zero, or cleared if it is non-zero (not in decimal mode).<br>The carry flag is set if the addition resulted in an outgoing carry.</p>
+      </div>
 
-      <p>
-        Adds the contents of any number contained in memory specified by the operand with the content of the accumulator plus the current state of the Carry flag, updating it after the operation.
-      </p>
+      <div class="opcode-text">
+        <p>
+          Adds the contents of any number contained in memory specified by the operand with the content of the accumulator plus the current state of the Carry flag, updating it after the operation.
+        </p>
 
-      <p>
-        Note that this is the only instruction to perform additions, and we can only make them between the accumulator and memory. There is neither an instruction to perform additions regardless of the state of the carry flag, like add in other micros. The programmer
-        is left responsible to manage the state of the carry, resetting it or not, before making a new addition (see clc/sec).
-      </p>
+        <p>
+          Note that this is the only instruction to perform additions, and we can only make them between the accumulator and memory. There is neither an instruction to perform additions regardless of the state of the carry flag, like add in other micros. The programmer
+          is left responsible to manage the state of the carry, resetting it or not, before making a new addition (see clc/sec).
+        </p>
 
-      <p>
-        Being the MPU's data bus size of 8 bits, we can manage only data of this size.
-      </p>
+        <p>
+          Being the MPU's data bus size of 8 bits, we can manage only data of this size.
+        </p>
 
-      <p>
-        For this reason to be able to perform additions with numbers that have more than one byte we can add the low bytes and the high bytes separately passing the carries with the help of the carry flag, with the inherent fact that adc will add the carry whenever
-        it is set (by the previous addition). You'll see this better with the following example...
-      </p>
+        <p>
+          For this reason to be able to perform additions with numbers that have more than one byte we can add the low bytes and the high bytes separately passing the carries with the help of the carry flag, with the inherent fact that adc will add the carry whenever
+          it is set (by the previous addition). You'll see this better with the following example...
+        </p>
 
-      <p>
-        16 bit addition example:
-      </p>
+        <p>
+          16 bit addition example:
+        </p>
+      </div>
 
       <div class="codeblock">
-        <pre style="margin: 0;">
+        <pre>
     <span style="color: #eeeb42; font-weight: bold">clc</span><span style="color: #83f383;">              // C = 0</span>
     <span style="color: #eeeb42; font-weight: bold">lda</span><span style="color: white;"> LOWBYTE </span><span style="color: #83f383;">     // a = LOWBYTE</span>
     <span style="color: #eeeb42; font-weight: bold">adc</span><span style="color: salmon;"> #</span><span style="color: #87daf3">$10</span><span style="color: #83f383;">         // a = a + $10 + C</span>
@@ -162,14 +167,18 @@
         </pre>
       </div>
 
-      <p>
-        Note: There is no way to add without the carry.
-      </p>
+      <div class="opcode-text">
+        <p>
+          Note: There is no way to add without the carry.
+        </p>
+      </div>
 
-      <h2 style="margin-left: 15px;">Navigation:</h2>
-      <button style="margin-left: 15px;" title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
-      <button style="margin-left: 15px;" title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
-      <button style="margin-left: 15px;" title="View List of All Math Instructions" class="button buttonNAVIGATION" onclick="cmdMATH()">Math Instructions</button>
+      <div id="navigation">
+        <h2>Navigation:</h2>
+        <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
+        <button title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
+        <button title="View List of All Math Instructions" class="button buttonNAVIGATION" onclick="cmdMATH()">Math Instructions</button>
+      </div>
     </div>
     <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
   </div>

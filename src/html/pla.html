@@ -14,83 +14,86 @@
 </head>
 
 <body>
-  <!--
-  <script nonce="${nonce}" src="${scriptUri}"></script>
-	-->
   <div id="page-container">
     <div id="content-wrap">
-      <div class="TitleBlock"> <img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" align="left" class="center">
-        <h1 style="text-align:center; padding-top: 20px;">PLA</h1>
+      <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
+        <h1>PLA</h1>
         <h2 style="text-align:center;">PulL Accumulator from stack</h2>
         <h4 style="text-align:center;">Operation: Extracts a byte from the stack and loads it into Accumulator</h4>
       </div>
       <br><br>
 
-      <table class='modes'>
-        <tr>
-          <th>
-            Mode
-          </th>
-          <th>
-            Syntax
-          </th>
-          <th>
-            HEX
-          </th>
-          <th>
-            LEN
-          </th>
-          <th>
-            TIME
-          </th>
-        </tr>
-        <tr>
-          <td>Implied</td>
-          <td>PLA</td>
-          <td>$68</td>
-          <td>1</td>
-          <td>4</td>
-        </tr>
-        <tr>
-          <th colspan=5>
-            <table class='modes flags'>
-              <tr>
-                <td>N</td>
-                <td>V</td>
-                <td>&#151;</td>
-                <td>B</td>
-                <td>D</td>
-                <td>I</td>
-                <td>Z</td>
-                <td>C</td>
-              </tr>
-              <tr style="color: olivedrab;">
-                <td>&#10003;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&#10003;</td>
-                <td>&nbsp;</td>
-              </tr>
-            </table>
-          </th>
-        </tr>
-      </table>
+      <div class="opcode-table">
+        <table class='modes'>
+          <tr>
+            <th>
+              Mode
+            </th>
+            <th>
+              Syntax
+            </th>
+            <th>
+              HEX
+            </th>
+            <th>
+              LEN
+            </th>
+            <th>
+              TIME
+            </th>
+          </tr>
+          <tr>
+            <td>Implied</td>
+            <td>PLA</td>
+            <td>$68</td>
+            <td>1</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <th colspan=5>
+              <table class='modes flags'>
+                <tr>
+                  <td>N</td>
+                  <td>V</td>
+                  <td>&#151;</td>
+                  <td>B</td>
+                  <td>D</td>
+                  <td>I</td>
+                  <td>Z</td>
+                  <td>C</td>
+                </tr>
+                <tr style="color: olivedrab;">
+                  <td>&#10003;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&#10003;</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+            </th>
+          </tr>
+        </table>
+      </div>
 
-      <p style="text-align:center;">The negative flag is set if the result is negative, i.e. has it's most significant bit set.<br>The zero flag is set if the result is zero, or cleared if it is non-zero.</p>
+      <div class="opcode-flags">
+        <p>The negative flag is set if the result is negative, i.e. has it's most significant bit set.<br>The zero flag is set if the result is zero, or cleared if it is non-zero.</p>
+      </div>
 
-      <p>Extracts a byte from the stack and loads it in the accumulator. N and Z flags are updated.</p>
+      <div class="opcode-text">
+        <p>Extracts a byte from the stack and loads it in the accumulator. N and Z flags are updated.</p>
 
-      <p>Due to the few registers you have in the 6510 microprocessor, the fact to temporarily store records to use in other tasks, being able to recover their values through the stack is something very important. However there's not an instruction to store
-        or retrieve the contents of the X or Y index registers, only the Accumulator and the P register (Processor Status) have instructions to manage the stack.</p>
+        <p>Due to the few registers you have in the 6510 microprocessor, the fact to temporarily store records to use in other tasks, being able to recover their values through the stack is something very important. However there's not an instruction to
+          store or retrieve the contents of the X or Y index registers, only the Accumulator and the P register (Processor Status) have instructions to manage the stack.</p>
 
-      <p>To work with this other registers and the stack we have to manage them through the accumulator, and transfer it later with the aid of the transfer instructions dedicated for this purposes.</p>
+        <p>To work with this other registers and the stack we have to manage them through the accumulator, and transfer it later with the aid of the transfer instructions dedicated for this purposes.</p>
 
-      <p>Example:</p>
+        <p>Example:</p>
 
-      <p>Save into the stack the Accumulator, X, and Y registers and retrieve them again later:</p>
+        <p>Save into the stack the Accumulator, X, and Y registers and retrieve them again later:</p>
+      </div>
 
       <div class="codeblock">
         <pre style="margin: 0;">
@@ -108,14 +111,18 @@
         </pre>
       </div>
 
-      <p>As you can observe, registers are retrieved respecting the order in wich they were stacked. This is very important because the stack is a kind of data structure called LIFO (last in first out), and if the order of retrievement differs the order
-        in which they were introduced we won't get his values correctly. Of course sometimes this order would be conveniently inverted in cases when we need to revert some register value for another, but in general is better, in order to gain some valuable
-        clock cycles, to do this task with transfer or load/store instructions (especially with Zero Page addressing).</p>
+      <div class="opcode-text">
+        <p>As you can observe, registers are retrieved respecting the order in wich they were stacked. This is very important because the stack is a kind of data structure called LIFO (last in first out), and if the order of retrievement differs the order
+          in which they were introduced we won't get his values correctly. Of course sometimes this order would be conveniently inverted in cases when we need to revert some register value for another, but in general is better, in order to gain some valuable
+          clock cycles, to do this task with transfer or load/store instructions (especially with Zero Page addressing).</p>
+      </div>
 
-      <h2 style="margin-left: 15px;">Navigation:</h2>
-      <button style="margin-left: 15px;" title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
-      <button style="margin-left: 15px;" title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
-      <button style="margin-left: 15px;" title="View List of All Stack Instructions" class="button buttonNAVIGATION" onclick="cmdSTACK()">Stack Instructions</button>
+      <div id="navigation">
+        <h2>Navigation:</h2>
+        <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
+        <button title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
+        <button title="View List of All Stack Instructions" class="button buttonNAVIGATION" onclick="cmdSTACK()">Stack Instructions</button>
+      </div>
     </div>
     <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
   </div>

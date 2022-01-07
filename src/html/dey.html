@@ -14,79 +14,84 @@
 </head>
 
 <body>
-  <!--
-  <script nonce="${nonce}" src="${scriptUri}"></script>
-	-->
   <div id="page-container">
     <div id="content-wrap">
-      <div class="TitleBlock"> <img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" align="left" class="center">
-        <h1 style="text-align:center; padding-top: 20px;">DEY</h1>
+      <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
+        <h1>DEY</h1>
         <h2 style="text-align:center;">DEcrement index Y by one</h2>
         <h2 style="text-align:center;">Operation: Y - 1 =&gt; Y</h2>
       </div>
       <br><br>
 
-      <table class='modes'>
-        <tr>
-          <th>
-            Mode
-          </th>
-          <th>
-            Syntax
-          </th>
-          <th>
-            HEX
-          </th>
-          <th>
-            LEN
-          </th>
-          <th>
-            TIME
-          </th>
-        </tr>
-        <tr>
-          <td>Implied</td>
-          <td>DEY</td>
-          <td>$88</td>
-          <td>1</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <th colspan=5>
-            <table class='modes flags'>
-              <tr>
-                <td>N</td>
-                <td>V</td>
-                <td>&#151;</td>
-                <td>B</td>
-                <td>D</td>
-                <td>I</td>
-                <td>Z</td>
-                <td>C</td>
-              </tr>
-              <tr style="color: olivedrab;">
-                <td>&#10003;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&#10003;</td>
-                <td>&nbsp;</td>
-              </tr>
-            </table>
-          </th>
-        </tr>
-      </table>
+      <div class="opcode-table">
+        <table class='modes'>
+          <tr>
+            <th>
+              Mode
+            </th>
+            <th>
+              Syntax
+            </th>
+            <th>
+              HEX
+            </th>
+            <th>
+              LEN
+            </th>
+            <th>
+              TIME
+            </th>
+          </tr>
+          <tr>
+            <td>Implied</td>
+            <td>DEY</td>
+            <td>$88</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th colspan=5>
+              <table class='modes flags'>
+                <tr>
+                  <td>N</td>
+                  <td>V</td>
+                  <td>&#151;</td>
+                  <td>B</td>
+                  <td>D</td>
+                  <td>I</td>
+                  <td>Z</td>
+                  <td>C</td>
+                </tr>
+                <tr style="color: olivedrab;">
+                  <td>&#10003;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&#10003;</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+            </th>
+          </tr>
+        </table>
+      </div>
 
-      <p style="text-align:center;">The negative status flag is set if the result is negative, i.e. has it's most significant bit set.<br>The zero flag is set if the result is zero, or cleared if it is non-zero.</p>
+      <div class="opcode-flags">
+        <p>The negative status flag is set if the result is negative, i.e. has it's most significant bit set.<br>The zero flag is set if the result is zero, or cleared if it is non-zero.</p>
+      </div>
 
-      <p>Decrements the contents of the Y index register by one.</p>
+      <div class="opcode-text">
+        <p>Decrements the contents of the Y index register by one.</p>
+      </div>
 
-      <h2 style="margin-left: 15px;">Navigation:</h2>
-      <button style="margin-left: 15px;" title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
-      <button style="margin-left: 15px;" title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
-      <button style="margin-left: 15px;" title="View List of All Register Instructions" class="button buttonNAVIGATION" onclick="cmdREGISTER()">Register Instructions</button>
+      <div id="navigation">
+        <h2>Navigation:</h2>
+        <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
+        <button title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
+        <button title="View List of All Register Instructions" class="button buttonNAVIGATION" onclick="cmdREGISTER()">Register Instructions</button>
+      </div>
     </div>
     <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
   </div>

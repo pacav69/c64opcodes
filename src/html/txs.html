@@ -14,77 +14,80 @@
 </head>
 
 <body>
-  <!--
-  <script nonce="${nonce}" src="${scriptUri}"></script>
-	-->
   <div id="page-container">
     <div id="content-wrap">
-      <div class="TitleBlock"> <img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" align="left" class="center">
-        <h1 style="text-align:center; padding-top: 20px;">TXS</h1>
+      <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
+        <h1>TXS</h1>
         <h2 style="text-align:center;">Transfer index X to Stack pointer</h2>
         <h2 style="text-align:center;">Operation: X =&gt; S</h2>
       </div>
       <br><br>
 
-      <table class='modes'>
-        <tr>
-          <th>
-            Mode
-          </th>
-          <th>
-            Syntax
-          </th>
-          <th>
-            HEX
-          </th>
-          <th>
-            LEN
-          </th>
-          <th>
-            TIME
-          </th>
-        </tr>
-        <tr>
-          <td>Implied</td>
-          <td>TXS</td>
-          <td>$9A</td>
-          <td>1</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <th colspan=5>
-            <table class='modes flags'>
-              <tr>
-                <td>N</td>
-                <td>V</td>
-                <td>&#151;</td>
-                <td>B</td>
-                <td>D</td>
-                <td>I</td>
-                <td>Z</td>
-                <td>C</td>
-              </tr>
-              <tr style="color: olivedrab;">
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-            </table>
-          </th>
-        </tr>
-      </table>
+      <div class="opcode-table">
+        <table class='modes'>
+          <tr>
+            <th>
+              Mode
+            </th>
+            <th>
+              Syntax
+            </th>
+            <th>
+              HEX
+            </th>
+            <th>
+              LEN
+            </th>
+            <th>
+              TIME
+            </th>
+          </tr>
+          <tr>
+            <td>Implied</td>
+            <td>TXS</td>
+            <td>$9A</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th colspan=5>
+              <table class='modes flags'>
+                <tr>
+                  <td>N</td>
+                  <td>V</td>
+                  <td>&#151;</td>
+                  <td>B</td>
+                  <td>D</td>
+                  <td>I</td>
+                  <td>Z</td>
+                  <td>C</td>
+                </tr>
+                <tr style="color: olivedrab;">
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+            </th>
+          </tr>
+        </table>
+      </div>
 
-      <p>Transfers the content of the index register X to the stack pointer register (S).</p>
+      <div class="opcode-text">
+        <p>Transfers the content of the index register X to the stack pointer register (S).</p>
+      </div>
 
-      <h2 style="margin-left: 15px;">Navigation:</h2>
-      <button style="margin-left: 15px;" title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
-      <button style="margin-left: 15px;" title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
-      <button style="margin-left: 15px;" title="View List of All Stack Instructions" class="button buttonNAVIGATION" onclick="cmdSTACK()">Stack Instructions</button>
+      <div id="navigation">
+        <h2>Navigation:</h2>
+        <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
+        <button title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
+        <button title="View List of All Stack Instructions" class="button buttonNAVIGATION" onclick="cmdSTACK()">Stack Instructions</button>
+      </div>
     </div>
     <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
   </div>

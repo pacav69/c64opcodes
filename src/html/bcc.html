@@ -14,84 +14,88 @@
 </head>
 
 <body>
-  <!--
-  <script nonce="${nonce}" src="${scriptUri}"></script>
-	-->
   <div id="page-container">
     <div id="content-wrap">
-      <div class="TitleBlock"> <img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" align="left" class="center">
-        <h1 style="text-align:center; padding-top: 20px;">BCC</h1>
+      <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
+        <h1>BCC</h1>
         <h2 style="text-align:center;">Branch on Carry Clear</h2>
         <h2 style="text-align:center;">Operation: Jump if C = 0</h2>
       </div>
       <br><br>
 
-      <table class='modes'>
-        <tr>
-          <th>
-            Mode
-          </th>
-          <th>
-            Syntax
-          </th>
-          <th>
-            HEX
-          </th>
-          <th>
-            LEN
-          </th>
-          <th>
-            TIME
-          </th>
-        </tr>
-        <tr>
-          <td>Relative</td>
-          <td>BCC $nn</td>
-          <td>$90</td>
-          <td>2</td>
-          <td>2+</td>
-        </tr>
-        <tr>
-          <th colspan=5>
-            <table class='modes flags'>
-              <tr>
-                <td>N</td>
-                <td>V</td>
-                <td>&#151;</td>
-                <td>B</td>
-                <td>D</td>
-                <td>I</td>
-                <td>Z</td>
-                <td>C</td>
-              </tr>
-              <tr style="color: olivedrab;">
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-            </table>
-          </th>
-        </tr>
-      </table>
+      <div class="opcode-table">
+        <table class='modes'>
+          <tr>
+            <th>
+              Mode
+            </th>
+            <th>
+              Syntax
+            </th>
+            <th>
+              HEX
+            </th>
+            <th>
+              LEN
+            </th>
+            <th>
+              TIME
+            </th>
+          </tr>
+          <tr>
+            <td>Relative</td>
+            <td>BCC $nn</td>
+            <td>$90</td>
+            <td>2</td>
+            <td>2+</td>
+          </tr>
+          <tr>
+            <th colspan=5>
+              <table class='modes flags'>
+                <tr>
+                  <td>N</td>
+                  <td>V</td>
+                  <td>&#151;</td>
+                  <td>B</td>
+                  <td>D</td>
+                  <td>I</td>
+                  <td>Z</td>
+                  <td>C</td>
+                </tr>
+                <tr style="color: olivedrab;">
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+            </th>
+          </tr>
+        </table>
+      </div>
 
-      <p style="text-align:center;">+ A branch not taken requires 2 machine cycles.<br>+ A branch requires 3 cycles if taken, plus 1 cycle if the branch cross a page boundary.</p>
+      <div class="opcode-flags">
+        <p>+ A branch not taken requires 2 machine cycles.<br>+ A branch requires 3 cycles if taken, plus 1 cycle if the branch cross a page boundary.</p>
+      </div>
 
-      <p>If Carry flag = 0, jump the number of bytes expressed by the opcode's next byte. This byte will be interpreted as a signed byte (in Two's complement), allowing to jump forward (127 bytes) or backwards (128 bytes). The assembler will automatically
-        calculate this displacement when we indicate a label as the destination for the jump, but we would need to understand Two's complement numbers in order to assemble relative branchs manually.</p>
+      <div class="opcode-text">
+        <p>If Carry flag = 0, jump the number of bytes expressed by the opcode's next byte. This byte will be interpreted as a signed byte (in Two's complement), allowing to jump forward (127 bytes) or backwards (128 bytes). The assembler will automatically
+          calculate this displacement when we indicate a label as the destination for the jump, but we would need to understand Two's complement numbers in order to assemble relative branchs manually.</p>
 
-      <p>Internally jumping consists of modifying the Program Counter register (PC), wich is the 16 bit register that contains the address for the next instruction to be executed. Basically this is what the instruction will do: it will add or substract the
-        proper number of bytes expressed by the operand to the PC if the condition Carry flag = 0 is true.</p>
+        <p>Internally jumping consists of modifying the Program Counter register (PC), wich is the 16 bit register that contains the address for the next instruction to be executed. Basically this is what the instruction will do: it will add or substract
+          the proper number of bytes expressed by the operand to the PC if the condition Carry flag = 0 is true.</p>
 
-      <p>This instrucion is useful for branching if a number is less than another. To do this we'll check with a compare instruction a number against another stored somewhere in memory. If the result resets the carry (C=0) it will be that the verified number
-        is less than the other one. This is because internally compare instructions are really substracting (in fact, adding two's complement signed numbers) and then they update the flags acording to the result obtained (the result on itself doesn't
-        matter really).</p>
+        <p>This instrucion is useful for branching if a number is less than another. To do this we'll check with a compare instruction a number against another stored somewhere in memory. If the result resets the carry (C=0) it will be that the verified
+          number is less than the other one. This is because internally compare instructions are really substracting (in fact, adding two's complement signed numbers) and then they update the flags acording to the result obtained (the result on itself
+          doesn't matter really).
+        </p>
 
-      <p>Example: jump if value1 &lt; accumulator:</p>
+        <p>Example: jump if value1 &lt; accumulator:</p>
+      </div>
 
       <div class="codeblock">
         <pre style="margin: 0;">
@@ -105,16 +109,19 @@
           </pre>
       </div>
 
-      <p>For jumps greater than the range of one signed byte we must use the JMP instruction. Considering that all the conditional branch instructions are using Relative Addressing and JMP uses Absolute Addressing, if we need to jump to a far place into
-        our program conditionally we can play with conditional branching points pointing to absolute jumps.</p>
+      <div class="opcode-text">
+        <p>For jumps greater than the range of one signed byte we must use the JMP instruction. Considering that all the conditional branch instructions are using Relative Addressing and JMP uses Absolute Addressing, if we need to jump to a far place into
+          our program conditionally we can play with conditional branching points pointing to absolute jumps.</p>
 
-      <p>Also if we need to make our routines 100% relocatable (in memory), we need to use the relative branching instructions.</p>
+        <p>Also if we need to make our routines 100% relocatable (in memory), we need to use the relative branching instructions.</p>
 
-      <p>If we need "to force" a jmp (Absolute), to be a relative branch, we can change the jmp by any other relative branch instruction, previously setting up the flag that controls that instruction. Also, because the carry flag is being used very often
-        than for example the overflow flag, is preferable to force relative jumps with bvc better than bcc, but you could use any relative branch you want, only taking in mind that the flag that controls the instruction can be easily altered at your convenience.
-      </p>
+        <p>If we need "to force" a jmp (Absolute), to be a relative branch, we can change the jmp by any other relative branch instruction, previously setting up the flag that controls that instruction. Also, because the carry flag is being used very often
+          than for example the overflow flag, is preferable to force relative jumps with bvc better than bcc, but you could use any relative branch you want, only taking in mind that the flag that controls the instruction can be easily altered at your
+          convenience.
+        </p>
 
-      <p>Example using bcc for relocatable routines:</p>
+        <p>Example using bcc for relocatable routines:</p>
+      </div>
 
       <div class="codeblock">
         <pre style="margin: 0;">
@@ -129,14 +136,18 @@
          </pre>
       </div>
 
-      <p>Note: There is no BRA (Branch Always) instruction but it can be easily emulated by branching on the basis of a known condition. One of the best flags to use for this purpose is the Overflow flag which is unchanged by all but the addition and subtraction
-        operations.
-      </p>
+      <div class="opcode-text">
+        <p>Note: There is no BRA (Branch Always) instruction but it can be easily emulated by branching on the basis of a known condition. One of the best flags to use for this purpose is the Overflow flag which is unchanged by all but the addition and subtraction
+          operations.
+        </p>
+      </div>
 
-      <h2 style="margin-left: 15px;">Navigation:</h2>
-      <button style="margin-left: 15px;" title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
-      <button style="margin-left: 15px;" title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
-      <button style="margin-left: 15px;" title="View List of All Branch Instructions" class="button buttonNAVIGATION" onclick="cmdBRANCH()">Branch Instructions</button>
+      <div id="navigation">
+        <h2>Navigation:</h2>
+        <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
+        <button title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
+        <button title="View List of All Branch Instructions" class="button buttonNAVIGATION" onclick="cmdBRANCH()">Branch Instructions</button>
+      </div>
     </div>
     <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
   </div>
