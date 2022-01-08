@@ -1,10 +1,14 @@
 :root {
-  --main-bg-color-light: rgb(10, 24, 17);
+  --main-bg-color-light: tan;
   --main-bg-color-dark: rgb(10, 24, 17);
   --main-bg-color-high: rgb(10, 24, 17);
-  --main-text-color-light: darkseagreen;
+  --main-text-color-light: black;
   --main-text-color-dark: darkseagreen;
-  --main-text-color-high: darkseagreen;
+  --main-text-color-high: lime;
+  --table-color: #3E32A2;
+  --table-background-color: #192725;
+  --table-text-color: tan;
+  --table-header-color: gold;
 }
 
 * {
@@ -16,15 +20,21 @@
 /*----------------------------------[ THEMES ]-----------------------------------*/
 
 body.vscode-light {
-  color: black;
+  font-size: var(--vscode-editor-font-size);
+  background-color: var(--main-bg-color-light);
+  color: var(--main-text-color-light);
 }
 
 body.vscode-dark {
-  /* color: var(--vscode-editor-foreground); */
   font-size: var(--vscode-editor-font-size);
-  /* color: darkseagreen; */
   background-color: var(--main-bg-color-dark);
   color: var(--main-text-color-dark);
+}
+
+body.vscode-high-contrast {
+  font-size: var(--vscode-editor-font-size);
+  background-color: var(--main-bg-color-high);
+  color: var(--main-text-color-high);
 }
 
 body.vscode-dark h1 {
@@ -49,10 +59,6 @@ body.vscode-dark h5 {
 
 body.vscode-dark h6 {
   font-size: small;
-}
-
-body.vscode-high-contrast {
-  color: red;
 }
 
 
@@ -86,6 +92,7 @@ body {
 
 #header-text {
   margin-top: 15px;
+  line-height: 2.5em;
 }
 
 #header-image {
@@ -115,6 +122,22 @@ body {
   min-width: calc(100% - 264px);
   overflow: auto;
   background-color: var(--main-bg-color);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: repeat(13, 45px);
+  padding-top: 15px;
+  width: 100%;
+  position: relative;
+  background-color: green;
+  text-align: center;
+}
+
+#illegal-button {
+  margin: 15px auto;
+  display: block;
 }
 
 .opcode-table {
@@ -162,6 +185,10 @@ body {
   padding-bottom: 15px;
 }
 
+#navigation-text {
+  margin-bottom: 10px;
+}
+
 #footer {
   position: absolute;
   bottom: 0;
@@ -178,7 +205,7 @@ body {
 /*----------------------------------[ TABLES ]-----------------------------------*/
 
 table.modes {
-  border: 4px solid #3E32A2;
+  border: 4px solid var(--table-color);
   border-collapse: separate;
   border-radius: 5px;
   border-left-width: 5px;
@@ -187,24 +214,24 @@ table.modes {
   margin-right: auto;
   border-left: 1;
   border-spacing: 0px;
-  color: tan;
-  background-color: #192725;
+  color: var(--table-text-color);
+  background-color: var(--table-background-color);
 }
 
 table.modes th {
-  background-color: #3E32A2;
-  color: gold;
+  background-color: var(--table-color);
+  color: var(--table-header-color);
 }
 
 table.modes.flags {
-  background-color: #192725;
+  background-color: var(--table-background-color);
   text-align: center;
 }
 
 table.modes th,
 table.modes td {
   text-align: center;
-  border: 0px solid #3E32A2;
+  border: 0px solid var(--table-color);
   border-right-width: 1px;
   border-bottom-width: 1px;
   padding: 10px;

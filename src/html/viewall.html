@@ -17,72 +17,74 @@
   <div id="page-container">
     <div id="content-wrap">
       <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
-        <h1>View All Opcodes<br>Select Opcode From the List</h1>
+        <div id="header-text">
+          <h1>View All Opcodes<br>Select Opcode From Below</h1>
+        </div>
       </div>
-      <div class="AllButtonBack"><br>
-        <button title="Add Memory to Accumulator with Carry" class="button buttonOPCODE" onclick="cmdADC()">ADC</button>
-        <button style="margin-left: 80px;" title="Bitwise AND with Accumulator" class="button buttonOPCODE" onclick="cmdAND()">AND</button>
-        <button style="margin-left: 80px;" title="Arithmetic Shift Left" class="button buttonOPCODE" onclick="cmdASL()">ASL</button>
-        <button style="margin-left: 80px;" title="Branch on Carry Clear" class="button buttonOPCODE" onclick="cmdBCC()">BCC</button><br>
-        <button title="Branch on Carry Set" class="button buttonOPCODE" onclick="cmdBCS()">BCS</button>
-        <button style="margin-left: 80px;" title="Branch on result zero" class="button buttonOPCODE" onclick="cmdBEQ()">BEQ</button>
-        <button style="margin-left: 80px;" title="Test bits in memory with accumulator" class="button buttonOPCODE" onclick="cmdBIT()">BIT</button>
-        <button style="margin-left: 80px;" title="Branch on result Minus" class="button buttonOPCODE" onclick="cmdBMI()">BMI</button><br>
-        <button title="Branch on result not zero" class="button buttonOPCODE" onclick="cmdBNE()">BNE</button>
-        <button style="margin-left: 80px;" title="Branch on result PLus" class="button buttonOPCODE" onclick="cmdBPL()">BPL</button>
-        <button style="margin-left: 80px;" title="Forced Break" class="button buttonOPCODE" onclick="cmdBRK()">BRK</button>
-        <button style="margin-left: 80px;" title="Branch on oVerflow Clear" class="button buttonOPCODE" onclick="cmdBVC()">BVC</button><br>
-        <button title="Branch on oVerflow Set" class="button buttonOPCODE" onclick="cmdBVS()">BVS</button>
-        <button style="margin-left: 80px;" title="CLear Carry flag" class="button buttonOPCODE" onclick="cmdCLC()">CLC</button>
-        <button style="margin-left: 80px;" title="CLear Decimal mode" class="button buttonOPCODE" onclick="cmdCLD()">CLD</button>
-        <button style="margin-left: 80px;" title="Clear Interrupt disable bit" class="button buttonOPCODE" onclick="cmdCLI()">CLI</button><br>
-        <button title="Clear OVerflow flag" class="button buttonOPCODE" onclick="cmdCLV()">CLV</button>
-        <button style="margin-left: 80px;" title="CoMPare Memory with accumulator" class="button buttonOPCODE" onclick="cmdCMP()">CMP</button>
-        <button style="margin-left: 80px;" title="ComPare memory and index X" class="button buttonOPCODE" onclick="cmdCPX()">CPX</button>
-        <button style="margin-left: 80px;" title="ComPare memory and index Y" class="button buttonOPCODE" onclick="cmdCPY()">CPY</button><br>
-        <button title="DECrement memory by one" class="button buttonOPCODE" onclick="cmdDEC()">DEC</button>
-        <button style="margin-left: 80px;" title="DEcrement index X by one" class="button buttonOPCODE" onclick="cmdDEX()">DEX</button>
-        <button style="margin-left: 80px;" title="DEcrement index Y by one" class="button buttonOPCODE" onclick="cmdDEY()">DEY</button>
-        <button style="margin-left: 80px;" title="Exclusive - OR memory with accumulator" class="button buttonOPCODE" onclick="cmdEOR()">EOR</button><br>
-        <button title="INCrement memory by one" class="button buttonOPCODE" onclick="cmdINC()">INC</button>
-        <button style="margin-left: 80px;" title="INcrement X index register by one" class="button buttonOPCODE" onclick="cmdINX()">INX</button>
-        <button style="margin-left: 80px;" title="INcrement Y index register by one" class="button buttonOPCODE" onclick="cmdINY()">INY</button>
-        <button style="margin-left: 80px;" title="JuMP to new location" class="button buttonOPCODE" onclick="cmdJMP()">JMP</button><br>
-        <button title="Jump to SubRoutine saving return address" class="button buttonOPCODE" onclick="cmdJSR()">JSR</button>
-        <button style="margin-left: 80px;" title="LoaD Accumulator with memory" class="button buttonOPCODE" onclick="cmdLDA()">LDA</button>
-        <button style="margin-left: 80px;" title="LoaD index X with memory" class="button buttonOPCODE" onclick="cmdLDX()">LDX</button>
-        <button style="margin-left: 80px;" title="LoaD index Y with memory" class="button buttonOPCODE" onclick="cmdLDY()">LDY</button><br>
-        <button title="Shift right one bit, memory or accumulator" class="button buttonOPCODE" onclick="cmdLSR()">LSR</button>
-        <button style="margin-left: 80px;" title="No OPeration" class="button buttonOPCODE" onclick="cmdNOP()">NOP</button>
-        <button style="margin-left: 80px;" title="'OR' memory with accumulator" class="button buttonOPCODE" onclick="cmdORA()">ORA</button>
-        <button style="margin-left: 80px;" title="PusH Accumulator to stack" class="button buttonOPCODE" onclick="cmdPHA()">PHA</button><br>
-        <button title="PusH Processor status on stack" class="button buttonOPCODE" onclick="cmdPHP()">PHP</button>
-        <button style="margin-left: 80px;" title="PulL Accumulator from stack" class="button buttonOPCODE" onclick="cmdPLA()">PLA</button>
-        <button style="margin-left: 80px;" title="PulL Processor status from stack" class="button buttonOPCODE" onclick="cmdPLP()">PLP</button>
-        <button style="margin-left: 80px;" title="Rotate One bit Left - Memory or Accumulator" class="button buttonOPCODE" onclick="cmdROL()">ROL</button><br>
-        <button title="Rotate One bit Right - memory or accumulator" class="button buttonOPCODE" onclick="cmdROR()">ROR</button>
-        <button style="margin-left: 80px;" title="ReTurn from Interrupt" class="button buttonOPCODE" onclick="cmdRTI()">RTI</button>
-        <button style="margin-left: 80px;" title="ReTurn from Subroutine" class="button buttonOPCODE" onclick="cmdRTS()">RTS</button>
-        <button style="margin-left: 80px;" title="SuBstract memory from accumulator with borrow" class="button buttonOPCODE" onclick="cmdSBC()">SBC</button><br>
-        <button title="SEt Carry Flag" class="button buttonOPCODE" onclick="cmdSEC()">SEC</button>
-        <button style="margin-left: 80px;" title="SEt Decimal mode" class="button buttonOPCODE" onclick="cmdSED()">SED</button>
-        <button style="margin-left: 80px;" title="Set Interrupt disable status" class="button buttonOPCODE" onclick="cmdSEI()">SEI</button>
-        <button style="margin-left: 80px;" title="STore Accumulator in memory" class="button buttonOPCODE" onclick="cmdSTA()">STA</button><br>
-        <button title="STore index X in memory" class="button buttonOPCODE" onclick="cmdSTX()">STX</button>
-        <button style="margin-left: 80px;" title="STore index Y in memory" class="button buttonOPCODE" onclick="cmdSTY()">STY</button>
-        <button style="margin-left: 80px;" title="Transfer Accumulator to index register X" class="button buttonOPCODE" onclick="cmdTAX()">TAX</button>
-        <button style="margin-left: 80px;" title="Transfer Accumulator to index Y" class="button buttonOPCODE" onclick="cmdTAY()">TAY</button><br>
-        <button title="Transfer Stack pointer to index X" class="button buttonOPCODE" onclick="cmdTSX()">TSX</button>
-        <button style="margin-left: 80px;" title="Transfer index X to Accumulator" class="button buttonOPCODE" onclick="cmdTXA()">TXA</button>
-        <button style="margin-left: 80px;" title="Transfer index X to Stack pointer" class="button buttonOPCODE" onclick="cmdTXS()">TXS</button>
-        <button style="margin-left: 80px;" title="Transfer index Y to Accumulator" class="button buttonOPCODE" onclick="cmdTYA()">TYA</button><br><br>
-        <button title="View List of All Illegal Instructions" class="button buttonMAIN" onclick="cmdILLEGAL()">View Illegal Instructions</button><br>
+
+      <div class="wrapper">
+        <div><button title="Add Memory to Accumulator with Carry" class="button buttonOPCODE" onclick="cmdADC()">ADC</button></div>
+        <div><button title="Bitwise AND with Accumulator" class="button buttonOPCODE" onclick="cmdAND()">AND</button></div>
+        <div><button title="Arithmetic Shift Left" class="button buttonOPCODE" onclick="cmdASL()">ASL</button></div>
+        <div><button title="Branch on Carry Clear" class="button buttonOPCODE" onclick="cmdBCC()">BCC</button></div>
+        <div><button title="Branch on Carry Set" class="button buttonOPCODE" onclick="cmdBCS()">BCS</button></div>
+        <div><button title="Branch on result zero" class="button buttonOPCODE" onclick="cmdBEQ()">BEQ</button></div>
+        <div><button title="Test bits in memory with accumulator" class="button buttonOPCODE" onclick="cmdBIT()">BIT</button></div>
+        <div><button title="Branch on result Minus" class="button buttonOPCODE" onclick="cmdBMI()">BMI</button></div>
+        <div><button title="Branch on result not zero" class="button buttonOPCODE" onclick="cmdBNE()">BNE</button></div>
+        <div><button title="Branch on result PLus" class="button buttonOPCODE" onclick="cmdBPL()">BPL</button></div>
+        <div><button title="Forced Break" class="button buttonOPCODE" onclick="cmdBRK()">BRK</button></div>
+        <div><button title="Branch on oVerflow Clear" class="button buttonOPCODE" onclick="cmdBVC()">BVC</button></div>
+        <div><button title="Branch on oVerflow Set" class="button buttonOPCODE" onclick="cmdBVS()">BVS</button></div>
+        <div><button title="CLear Carry flag" class="button buttonOPCODE" onclick="cmdCLC()">CLC</button></div>
+        <div><button title="CLear Decimal mode" class="button buttonOPCODE" onclick="cmdCLD()">CLD</button></div>
+        <div><button title="Clear Interrupt disable bit" class="button buttonOPCODE" onclick="cmdCLI()">CLI</button></div>
+        <div><button title="Clear OVerflow flag" class="button buttonOPCODE" onclick="cmdCLV()">CLV</button></div>
+        <div><button title="CoMPare Memory with accumulator" class="button buttonOPCODE" onclick="cmdCMP()">CMP</button></div>
+        <div><button title="ComPare memory and index X" class="button buttonOPCODE" onclick="cmdCPX()">CPX</button></div>
+        <div><button title="ComPare memory and index Y" class="button buttonOPCODE" onclick="cmdCPY()">CPY</button></div>
+        <div><button title="DECrement memory by one" class="button buttonOPCODE" onclick="cmdDEC()">DEC</button></div>
+        <div><button title="DEcrement index X by one" class="button buttonOPCODE" onclick="cmdDEX()">DEX</button></div>
+        <div><button title="DEcrement index Y by one" class="button buttonOPCODE" onclick="cmdDEY()">DEY</button></div>
+        <div><button title="Exclusive - OR memory with accumulator" class="button buttonOPCODE" onclick="cmdEOR()">EOR</button></div>
+        <div><button title="INCrement memory by one" class="button buttonOPCODE" onclick="cmdINC()">INC</button></div>
+        <div><button title="INcrement X index register by one" class="button buttonOPCODE" onclick="cmdINX()">INX</button></div>
+        <div><button title="INcrement Y index register by one" class="button buttonOPCODE" onclick="cmdINY()">INY</button></div>
+        <div><button title="JuMP to new location" class="button buttonOPCODE" onclick="cmdJMP()">JMP</button></div>
+        <div><button title="Jump to SubRoutine saving return address" class="button buttonOPCODE" onclick="cmdJSR()">JSR</button></div>
+        <div><button title="LoaD Accumulator with memory" class="button buttonOPCODE" onclick="cmdLDA()">LDA</button></div>
+        <div><button title="LoaD index X with memory" class="button buttonOPCODE" onclick="cmdLDX()">LDX</button></div>
+        <div><button title="LoaD index Y with memory" class="button buttonOPCODE" onclick="cmdLDY()">LDY</button></div>
+        <div><button title="Shift right one bit, memory or accumulator" class="button buttonOPCODE" onclick="cmdLSR()">LSR</button></div>
+        <div><button title="No OPeration" class="button buttonOPCODE" onclick="cmdNOP()">NOP</button></div>
+        <div><button title="'OR' memory with accumulator" class="button buttonOPCODE" onclick="cmdORA()">ORA</button></div>
+        <div><button title="PusH Accumulator to stack" class="button buttonOPCODE" onclick="cmdPHA()">PHA</button></div>
+        <div><button title="PusH Processor status on stack" class="button buttonOPCODE" onclick="cmdPHP()">PHP</button></div>
+        <div><button title="PulL Accumulator from stack" class="button buttonOPCODE" onclick="cmdPLA()">PLA</button></div>
+        <div><button title="PulL Processor status from stack" class="button buttonOPCODE" onclick="cmdPLP()">PLP</button></div>
+        <div><button title="Rotate One bit Left - Memory or Accumulator" class="button buttonOPCODE" onclick="cmdROL()">ROL</button></div>
+        <div><button title="Rotate One bit Right - memory or accumulator" class="button buttonOPCODE" onclick="cmdROR()">ROR</button></div>
+        <div><button title="ReTurn from Interrupt" class="button buttonOPCODE" onclick="cmdRTI()">RTI</button></div>
+        <div><button title="ReTurn from Subroutine" class="button buttonOPCODE" onclick="cmdRTS()">RTS</button></div>
+        <div><button title="SuBstract memory from accumulator with borrow" class="button buttonOPCODE" onclick="cmdSBC()">SBC</button></div>
+        <div><button title="SEt Carry Flag" class="button buttonOPCODE" onclick="cmdSEC()">SEC</button></div>
+        <div><button title="SEt Decimal mode" class="button buttonOPCODE" onclick="cmdSED()">SED</button></div>
+        <div><button title="Set Interrupt disable status" class="button buttonOPCODE" onclick="cmdSEI()">SEI</button></div>
+        <div><button title="STore Accumulator in memory" class="button buttonOPCODE" onclick="cmdSTA()">STA</button></div>
+        <div><button title="STore index X in memory" class="button buttonOPCODE" onclick="cmdSTX()">STX</button></div>
+        <div><button title="STore index Y in memory" class="button buttonOPCODE" onclick="cmdSTY()">STY</button></div>
+        <div><button title="Transfer Accumulator to index register X" class="button buttonOPCODE" onclick="cmdTAX()">TAX</button></div>
+        <div><button title="Transfer Accumulator to index Y" class="button buttonOPCODE" onclick="cmdTAY()">TAY</button></div>
+        <div><button title="Transfer Stack pointer to index X" class="button buttonOPCODE" onclick="cmdTSX()">TSX</button></div>
+        <div><button title="Transfer index X to Accumulator" class="button buttonOPCODE" onclick="cmdTXA()">TXA</button></div>
+        <div><button title="Transfer index X to Stack pointer" class="button buttonOPCODE" onclick="cmdTXS()">TXS</button></div>
+        <div><button title="Transfer index Y to Accumulator" class="button buttonOPCODE" onclick="cmdTYA()">TYA</button></div>
       </div>
-      <div id="body">
-        <p>View all</p>
-      </div>
+
+      <div><button id="illegal-button" title="View List of All Illegal Instructions" class="button buttonMAIN" onclick="cmdILLEGAL()">View Illegal Instructions</button></div>
+
       <div id="navigation">
-        <h2>Navigation:</h2>
+        <h2 id="navigation-text">Navigation:</h2>
         <button title="Return to Home Page" class="button buttonOPCODE" onclick="cmdHOME()">Home</button>
       </div>
     </div>

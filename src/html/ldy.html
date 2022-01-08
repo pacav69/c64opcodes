@@ -17,11 +17,12 @@
   <div id="page-container">
     <div id="content-wrap">
       <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
-        <h1>LDY</h1>
-        <h2 style="text-align:center;">LoaD index Y with memory</h2>
-        <h2 style="text-align:center;">Operation: M =&gt; Y</h2>
+        <div id="header-text">
+          <h1>LDY</h1>
+          <h2 style="text-align:center;">LoaD index Y with memory</h2>
+          <h2 style="text-align:center;">Operation: M =&gt; Y</h2>
+        </div>
       </div>
-      <br><br>
 
       <div class="opcode-table">
         <table class='modes'>
@@ -90,7 +91,7 @@
                   <td>Z</td>
                   <td>C</td>
                 </tr>
-                <tr style="color: olivedrab;">
+                <tr>
                   <td>&#10003;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -108,7 +109,8 @@
 
       <div class="opcode-flags">
         <p>+ add 1 cycle if page boundary crossed.<br>The negative flag is set if the result is negative, i.e. has it's most significant bit set (not in decimal mode).<br>The zero flag is set if the result is zero, or cleared if it is non-zero (not in decimal
-          mode).</p>
+          mode).
+        </p>
       </div>
 
       <div class="opcode-text">
