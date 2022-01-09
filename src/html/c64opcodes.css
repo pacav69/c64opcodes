@@ -109,6 +109,41 @@ body {
   margin-left: 10px;
 }
 
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 45px);
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.register-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 45px);
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.other-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 45px);
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
 .math-grid {
   display: grid;
   grid-template-columns: repeat(2, 50%);
@@ -224,7 +259,7 @@ body {
 }
 
 #navigation {
-  background: red;
+  /* background: red; */
   margin-left: 15px;
   padding-bottom: 1rem;
 }

@@ -17,11 +17,22 @@
   <div id="page-container">
     <div id="content-wrap">
       <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
-        <h1 style="text-align:center; padding-top: 40px;">Register Instructions<br>Placeholder</h1>
+        <h1 id="header-text">Register Instructions</h1>
       </div>
-      <div class="AllButtonBack"><br>
-        <button title="WIP" class="button buttonOPCODE" onclick="cmdHOME()">WIP</button>
+
+      <div class="register-grid">
+        <div><button title="DEcrement index X by one" class="button buttonOPCODE" onclick="cmdDEX()">DEX</button></div>
+        <div><button title="DEcrement index Y by one" class="button buttonOPCODE" onclick="cmdDEY()">DEY</button></div>
+        <div><button title="INcrement X index register by one" class="button buttonOPCODE" onclick="cmdINX()">INX</button></div>
+        <div><button title="INcrement Y index register by one" class="button buttonOPCODE" onclick="cmdINY()">INY</button></div>
+        <div><button title="Transfer Accumulator to index register X" class="button buttonOPCODE" onclick="cmdTAX()">TAX</button></div>
+        <div><button title="Transfer Accumulator to index Y" class="button buttonOPCODE" onclick="cmdTAY()">TAY</button></div>
+        <div><button title="Transfer index X to Accumulator" class="button buttonOPCODE" onclick="cmdTXA()">TXA</button></div>
+        <div><button title="Transfer index Y to Accumulator" class="button buttonOPCODE" onclick="cmdTYA()">TYA</button></div>
       </div>
+
+      <div style="padding-bottom: 59vh;"> </div>
+
       <div id="navigation">
         <h2>Navigation:</h2>
         <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>

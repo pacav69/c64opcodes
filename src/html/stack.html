@@ -17,14 +17,24 @@
   <div id="page-container">
     <div id="content-wrap">
       <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
-        <h1 style="text-align:center; padding-top: 40px;">Stack Instructions<br>Placeholder</h1>
+        <h1 id="header-text">Stack Instructions<br>Placeholder</h1>
       </div>
-      <div class="AllButtonBack"><br>
-        <button title="WIP" class="button buttonOPCODE" onclick="cmdHOME()">WIP</button>
+
+      <div class="stack-grid">
+        <div><button title="PusH Accumulator to stack" class="button buttonOPCODE" onclick="cmdPHA()">PHA</button></div>
+        <div><button title="PusH Processor status on stack" class="button buttonOPCODE" onclick="cmdPHP()">PHP</button></div>
+        <div><button title="PulL Accumulator from stack" class="button buttonOPCODE" onclick="cmdPLA()">PLA</button></div>
+        <div><button title="PulL Processor status from stack" class="button buttonOPCODE" onclick="cmdPLP()">PLP</button></div>
+        <div><button title="Transfer Stack pointer to index X" class="button buttonOPCODE" onclick="cmdTSX()">TSX</button></div>
+        <div><button title="Transfer index X to Stack pointer" class="button buttonOPCODE" onclick="cmdTXS()">TXS</button></div>
       </div>
+
+      <div style="padding-bottom: 59vh;"> </div>
+
       <div id="navigation">
         <h2>Navigation:</h2>
         <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
+        <button title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
       </div>
     </div>
     <footer id="footer">C64 Opcodes Extension, By WillASM</footer>

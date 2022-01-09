@@ -17,15 +17,20 @@
   <div id="page-container">
     <div id="content-wrap">
       <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
-        <h1 style="text-align:center; padding-top: 40px;">Processor Flags<br>Placeholder</h1>
+        <h1 id="header-text">Processor Flags</h1>
       </div>
+
       <div class="AllButtonBack"><br>
         <button title="WIP" class="button buttonOPCODE" onclick="cmdHOME()">WIP</button>
       </div>
-      <h2 style="margin-left: 15px; ">Navigation:</h2>
-      <button style="margin-left: 15px; " title="Return to Home Page " class="button buttonNAVIGATION " onclick="cmdHOME() ">Home</button>
+
+      <div id="navigation">
+        <h2>Navigation:</h2>
+        <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
+        <button title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
+      </div>
     </div>
-    <footer id="footer ">C64 Opcodes Extension, By WillASM</footer>
+    <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
   </div>
 </body>
 
