@@ -37,30 +37,6 @@ body.vscode-high-contrast {
   color: var(--main-text-color-high);
 }
 
-body.vscode-dark h1 {
-  font-size: xx-large;
-}
-
-body.vscode-dark h2 {
-  font-size: x-large;
-}
-
-body.vscode-dark h3 {
-  font-size: larger;
-}
-
-body.vscode-dark h4 {
-  font-size: large;
-}
-
-body.vscode-dark h5 {
-  font-size: medium;
-}
-
-body.vscode-dark h6 {
-  font-size: small;
-}
-
 
 /*----------------------------------[ ELEMENTS ]-----------------------------------*/
 
@@ -77,7 +53,6 @@ body {
 
 #content-wrap {
   padding-bottom: 1.5rem;
-  /* Footer height */
 }
 
 #header {
@@ -113,30 +88,98 @@ body {
   text-align: center;
 }
 
-#home-body {
-  display: flex;
-  position: absolute;
-  top: 180px;
+.home-body {
+  padding-left: 264px;
   bottom: 1.5rem;
-  margin-left: 264px;
   min-width: calc(100% - 264px);
   overflow: auto;
   background-color: var(--main-bg-color);
 }
 
-.wrapper {
+.home-body h2 {
+  text-align: center;
+}
+
+.home-body h4 {
+  text-align: center;
+}
+
+.home-body p {
+  padding-bottom: 1em;
+  margin-left: 10px;
+}
+
+.math-grid {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: repeat(13, 45px);
-  padding-top: 15px;
+  grid-template-columns: repeat(2, 50%);
   width: 100%;
   position: relative;
-  background-color: green;
+  text-align: center;
+}
+
+.jump-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.flag-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 45px);
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.branch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 45px);
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.branch-text {
+  margin-top: 35px;
+  margin-left: 15px;
+}
+
+.branch-text p {
+  padding-bottom: 1em;
+}
+
+.bitwise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 45px);
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.view-all-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(13, 45px);
+  width: 100%;
+  position: relative;
   text-align: center;
 }
 
 #illegal-button {
-  margin: 15px auto;
+  margin: 0 auto;
   display: block;
 }
 
@@ -181,12 +224,9 @@ body {
 }
 
 #navigation {
-  padding-left: 15px;
-  padding-bottom: 15px;
-}
-
-#navigation-text {
-  margin-bottom: 10px;
+  background: red;
+  margin-left: 15px;
+  padding-bottom: 1rem;
 }
 
 #footer {
@@ -198,7 +238,6 @@ body {
   color: #79fada;
   background-color: #4242b3;
   font-size: large;
-  /* Footer height */
 }
 
 
@@ -250,7 +289,7 @@ table.modes td {
   display: inline-block;
   font-size: 14px;
   font-weight: bold;
-  margin: 2px 2px;
+  margin: 10px 2px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
   border-radius: 4px;

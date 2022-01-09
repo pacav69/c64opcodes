@@ -17,14 +17,22 @@
   <div id="page-container">
     <div id="content-wrap">
       <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
-        <h1 style="text-align:center; padding-top: 40px;">Jump Instructions<br>Placeholder</h1>
+        <h1 id="header-text">Jump Instructions</h1>
       </div>
-      <div class="AllButtonBack"><br>
-        <button title="WIP" class="button buttonOPCODE" onclick="cmdHOME()">WIP</button>
+
+      <div class="jump-grid">
+        <div><button title="JuMP to new location" class="button buttonOPCODE" onclick="cmdJMP()">JMP</button></div>
+        <div><button title="Jump to SubRoutine saving return address" class="button buttonOPCODE" onclick="cmdJSR()">JSR</button></div>
+        <div><button title="ReTurn from Interrupt" class="button buttonOPCODE" onclick="cmdRTI()">RTI</button></div>
+        <div><button title="ReTurn from Subroutine" class="button buttonOPCODE" onclick="cmdRTS()">RTS</button></div>
       </div>
+
+      <div style="padding-bottom: 64vh;"> </div>
+
       <div id="navigation">
         <h2>Navigation:</h2>
         <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
+        <button title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
       </div>
     </div>
     <footer id="footer">C64 Opcodes Extension, By WillASM</footer>

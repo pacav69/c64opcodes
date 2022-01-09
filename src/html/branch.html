@@ -19,12 +19,34 @@
       <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
         <h1 style="text-align:center; padding-top: 40px;">Branch Instructions<br>Placeholder</h1>
       </div>
-      <div class="AllButtonBack"><br>
-        <button title="WIP" class="button buttonOPCODE" onclick="cmdHOME()">WIP</button>
+
+      <div class="branch-grid">
+        <div><button title="Branch on Carry Clear" class="button buttonOPCODE" onclick="cmdBCC()">BCC</button></div>
+        <div><button title="Branch on Carry Set" class="button buttonOPCODE" onclick="cmdBCS()">BCS</button></div>
+        <div><button title="Branch on result zero" class="button buttonOPCODE" onclick="cmdBEQ()">BEQ</button></div>
+        <div><button title="Branch on result Minus" class="button buttonOPCODE" onclick="cmdBMI()">BMI</button></div>
+        <div><button title="Branch on result not zero" class="button buttonOPCODE" onclick="cmdBNE()">BNE</button></div>
+        <div><button title="Branch on result PLus" class="button buttonOPCODE" onclick="cmdBPL()">BPL</button></div>
+        <div><button title="Branch on oVerflow Clear" class="button buttonOPCODE" onclick="cmdBVC()">BVC</button></div>
+        <div><button title="Branch on oVerflow Set" class="button buttonOPCODE" onclick="cmdBVS()">BVS</button></div>
       </div>
+
+      <div class="branch-text">
+        <p>All branches are relative mode and have a length of two bytes. Syntax is "Bxx Displacement" or (better) "Bxx Label". Branches are dependant on the status of the flag bits when the opcode is encountered.</p>
+
+        <p>A branch not taken requires 2 machine cycles. A branch requires 3 cycles if taken, plus 1 cycle if the branch cross a page boundary. Note: There is no BRA (Branch Always) instruction but it can be easily emulated by branching on the basis of a
+          known condition. One of the best flags to use for this purpose is the Overflow flag which is unchanged by all but the addition and subtraction operations.</p>
+
+        <p> The BVC instruction will take 3 cycles no matter what address it is located at.</p>
+      </div>
+
+
+      <div style="padding-bottom: 32vh;"> </div>
+
       <div id="navigation">
         <h2>Navigation:</h2>
         <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
+        <button title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
       </div>
     </div>
     <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
