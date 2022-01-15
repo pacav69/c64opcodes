@@ -48,12 +48,12 @@
             "properties": {
                 "c64opcodes.useC64Font": {
                     "type": "boolean",
-                    "default": "false",
+                    "default": false,
                     "description": "Display text using C64 Font"
                 },
                 "c64opcodes.useSidePanel": {
                     "type": "boolean",
-                    "default": "true",
+                    "default": true,
                     "description": "View Opcode information in side panel"
                 }
             }
