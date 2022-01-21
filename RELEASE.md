@@ -1,5 +1,5 @@
 # Release Notes
-## v0.0.1
+## [0.0.1] 2022-01-21
 - Initial Release
 
 For a full list of changes, please see the projects [Changelog](CHANGELOG.md) file.

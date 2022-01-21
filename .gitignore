@@ -1,6 +1,3 @@
-out
-dist
 node_modules
-.vscode-test/
 .vscode/*.MD
 NoMoreSecrets-NMOS6510UnintendedOpcodes-20162412.pdf

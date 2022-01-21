@@ -4,18 +4,13 @@ exports.deactivate = exports.activate = void 0;
 const vscode = require("vscode");
 const path = require("path");
 const fs = require("fs");
+
 // ========================================================================== //
 // Extension Optional Settings
 const settings = vscode.workspace.getConfiguration("c64opcodes");
 const useC64Font = settings.get("useC64Font");
 const useC64SidePanel = settings.get("useSidePanel");
-//console.log("Use Side Panel? ",useC64SidePanel);
-//console.log("Use C64 Font? ",useC64Font);
-// if (useC64SidePanel) {
-//   const showInPanel = vscode.ViewColumn.Two;
-// } else {
-//   const showInPanel = vscode.ViewColumn.One;
-// }      
+
 function activate(context) {
     // Track currently webview panel
     let webviewPanel = undefined;
