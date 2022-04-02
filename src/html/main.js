@@ -529,3 +529,10 @@ function cmdSLO() {
         pageTitle: "SLO"
     });
 }
+
+function cmdRLA() {
+    vscode.postMessage({
+        command: "rla",
+        pageTitle: "RLA"
+    });
+}
