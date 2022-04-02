@@ -515,3 +515,17 @@ function cmdTYA() {
         pageTitle: "TYA"
     });
 }
+
+function cmdASO() {
+    vscode.postMessage({
+        command: "aso",
+        pageTitle: "ASO"
+    });
+}
+
+function cmdSLO() {
+    vscode.postMessage({
+        command: "slo",
+        pageTitle: "SLO"
+    });
+}

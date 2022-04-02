@@ -17,19 +17,20 @@
   <div id="page-container">
     <div id="content-wrap">
       <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
-        <h1 id="header-text">Illegal Instructions<br>Placeholder</h1>
+        <h1 id="header-text">View All Illegal Opcodes<br>Select Opcode From Below</h1>
       </div>
 
-      <div class="AllButtonBack"><br>
-        <button title="WIP" class="button buttonOPCODE" onclick="cmdHOME()">WIP</button>
+      <div class="view-all-grid">
+        <div><button title="Shift left one bit in memory, then OR accumulator with memory" class="button buttonOPCODE" onclick="cmdASO()">ASO</button></div>
+        <div><button title="Shift left one bit in memory, then OR accumulator with memory" class="button buttonOPCODE" onclick="cmdSLO()">SLO</button></div>
       </div>
+      <br>
 
-      <div style="padding-bottom: 50vh;"> </div>
+      <div><button id="illegal-button" title="View List of All C64 Opcodes" class="button buttonMAIN" onclick="cmdVIEWALL()">View All Opcodes List</button></div>
 
       <div id="navigation">
-        <h2>Navigation:</h2>
+        <h2 id="navigation-text">Navigation:</h2>
         <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
-        <button title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
       </div>
     </div>
     <footer id="footer">C64 Opcodes Extension, By WillASM</footer>

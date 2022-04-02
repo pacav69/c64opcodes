@@ -5,21 +5,14 @@
 {
 	"version": "0.2.0",
 	"configurations": [
+
 		{
 			"name": "Run Extension",
 			"type": "extensionHost",
 			"request": "launch",
+			"sourceMaps": false,
 			"args": [
-				"--extensionDevelopmentPath=${workspaceFolder}",
-			]
-		},
-		{
-			"name": "Extension Tests",
-			"type": "extensionHost",
-			"request": "launch",
-			"args": [
-				"--extensionDevelopmentPath=${workspaceFolder}",
-				"--extensionTestsPath=${workspaceFolder}/test/suite/index",
+				"--extensionDevelopmentPath=${workspaceFolder}"
 			]
 		}
 	]
