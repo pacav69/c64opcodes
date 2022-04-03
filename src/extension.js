@@ -65,11 +65,51 @@ function activate(context) {
         }
         let wordRange = editor.document.getWordRangeAtPosition(editor.selection.start);
         let wordText = editor.document.getText(wordRange);
-        const lowWordText = wordText.toLowerCase(); // Convert to lower case for comparison
-        const highWordText = wordText.toUpperCase(); // Convert to Upper case for Title
+        let lowWordText = wordText.toLowerCase(); // Convert to lower case for comparison
+        let highWordText = wordText.toUpperCase(); // Convert to Upper case for Title
+        // • Correct page title text for duplicate opcodes • 
+        if (highWordText === 'ASO') {
+            highWordText = 'ASO (SLO)';
+        }
+        if (highWordText === 'SLO') {
+            highWordText = 'SLO (ASO)';
+        }
+        if (highWordText === 'LSE') {
+            highWordText = 'LSE (SRE)';
+        }
+        if (highWordText === 'LSE') {
+            highWordText = 'LSE (SRE)';
+        }
+        if (highWordText === 'SRE') {
+            highWordText = 'SRE (LSE)';
+        }
+        if (highWordText === 'AXS') {
+            highWordText = 'AXS (SAX AAX)';
+        }
+        if (highWordText === 'SAX') {
+            highWordText = 'SAX (AXS AAX)';
+        }
+        if (highWordText === 'AAX') {
+            highWordText = 'AAX (SAX AXS)';
+        }
+        if (highWordText === 'DCM') {
+            highWordText = 'DCM (DCP)';
+        }
+        if (highWordText === 'DCP') {
+            highWordText = 'DCP (DCM)';
+        }
+        if (highWordText === 'ISC') {
+            highWordText = 'ISC (ISB INS)';
+        }
+        if (highWordText === 'ISB') {
+            highWordText = 'ISB (ISC INS)';
+        }
+        if (highWordText === 'INS') {
+            highWordText = 'INS (ISB ISC)';
+        }
 
         // • If word is opcode then display its html page in webview • 
-        if (lowWordText.match(/^(adc|and|asl|bcc|bcs|beq|bit|bmi|bne|bpl|brk|bvc|bvs|clc|cld|cli|clv|cmp|cpx|cpy|dec|dex|dey|eor|inc|inx|iny|jmp|jsr|lda|ldx|ldy|lsr|nop|ora|pha|php|pla|plp|rol|ror|rti|rts|sbc|sec|sed|sei|sta|stx|sty|tax|tay|tsx|txa|txs|tya|aso|slo|rla|lse|sre|rra|axs|sax|aax|lax)$/)) {
+        if (lowWordText.match(/^(adc|and|asl|bcc|bcs|beq|bit|bmi|bne|bpl|brk|bvc|bvs|clc|cld|cli|clv|cmp|cpx|cpy|dec|dex|dey|eor|inc|inx|iny|jmp|jsr|lda|ldx|ldy|lsr|nop|ora|pha|php|pla|plp|rol|ror|rti|rts|sbc|sec|sed|sei|sta|stx|sty|tax|tay|tsx|txa|txs|tya|aso|slo|rla|lse|sre|rra|axs|sax|aax|lax|dcm|dcp|isc|isb|ins)$/)) {
             // • Local path to html file • 
             const htmlFilePath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', lowWordText + '.html'));
             var localhtml = fs.readFileSync(htmlFilePath.fsPath, 'utf8').toString();

@@ -519,14 +519,14 @@ function cmdTYA() {
 function cmdASO() {
     vscode.postMessage({
         command: "aso",
-        pageTitle: "ASO"
+        pageTitle: "ASO (SLO)"
     });
 }
 
 function cmdSLO() {
     vscode.postMessage({
         command: "slo",
-        pageTitle: "SLO"
+        pageTitle: "SLO (ASO)"
     });
 }
 
@@ -540,14 +540,14 @@ function cmdRLA() {
 function cmdLSE() {
     vscode.postMessage({
         command: "lse",
-        pageTitle: "LSE"
+        pageTitle: "LSE (SRE)"
     });
 }
 
 function cmdSRE() {
     vscode.postMessage({
         command: "sre",
-        pageTitle: "SRE"
+        pageTitle: "SRE (LSE)"
     });
 }
 
@@ -561,21 +561,21 @@ function cmdRRA() {
 function cmdAXS() {
     vscode.postMessage({
         command: "axs",
-        pageTitle: "AXS"
+        pageTitle: "AXS (SAX AAX)"
     });
 }
 
 function cmdSAX() {
     vscode.postMessage({
         command: "sax",
-        pageTitle: "SAX"
+        pageTitle: "SAX (AXS AAX)"
     });
 }
 
 function cmdAAX() {
     vscode.postMessage({
         command: "aax",
-        pageTitle: "AAX"
+        pageTitle: "AAX (SAX AXS)"
     });
 }
 
@@ -583,5 +583,40 @@ function cmdLAX() {
     vscode.postMessage({
         command: "lax",
         pageTitle: "LAX"
+    });
+}
+
+function cmdDCM() {
+    vscode.postMessage({
+        command: "dcm",
+        pageTitle: "DCM (DCP)"
+    });
+}
+
+function cmdDCP() {
+    vscode.postMessage({
+        command: "dcp",
+        pageTitle: "DCP (DCM)"
+    });
+}
+
+function cmdISC() {
+    vscode.postMessage({
+        command: "isc",
+        pageTitle: "ISC (ISB INS)"
+    });
+}
+
+function cmdISB() {
+    vscode.postMessage({
+        command: "isb",
+        pageTitle: "ISB (ISC INS)"
+    });
+}
+
+function cmdINS() {
+    vscode.postMessage({
+        command: "ins",
+        pageTitle: "INS (ISC ISB)"
     });
 }
