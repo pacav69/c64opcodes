@@ -550,3 +550,31 @@ function cmdSRE() {
         pageTitle: "SRE"
     });
 }
+
+function cmdRRA() {
+    vscode.postMessage({
+        command: "rra",
+        pageTitle: "RRA"
+    });
+}
+
+function cmdAXS() {
+    vscode.postMessage({
+        command: "axs",
+        pageTitle: "AXS"
+    });
+}
+
+function cmdSAX() {
+    vscode.postMessage({
+        command: "sax",
+        pageTitle: "SAX"
+    });
+}
+
+function cmdAAX() {
+    vscode.postMessage({
+        command: "aax",
+        pageTitle: "AAX"
+    });
+}
