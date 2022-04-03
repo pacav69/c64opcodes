@@ -578,3 +578,10 @@ function cmdAAX() {
         pageTitle: "AAX"
     });
 }
+
+function cmdLAX() {
+    vscode.postMessage({
+        command: "lax",
+        pageTitle: "LAX"
+    });
+}
