@@ -18,9 +18,9 @@
     <div id="content-wrap">
       <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
         <div id="header-text">
-          <h1>ISB (ISC INS)</h1>
-          <h2 style="text-align:center;">INC memory then subtract memory from accumulator (with borrow)</h2>
-          <h2 style="text-align:center;">(Sub-instructions: SBC, INC)</h2>
+          <h1>ALR - ASR</h1>
+          <h2 style="text-align:center;">AND the A register with an immediate value then LSRs the result</h2>
+          <h2 style="text-align:center;">(Sub-instructions: AND, LSR)</h2>
         </div>
       </div>
 
@@ -44,53 +44,12 @@
             </th>
           </tr>
           <tr>
-            <td>Zero Page</td>
-            <td>ISB $44</td>
-            <td>$E7</td>
+          <tr>
+            <td>Immediate</td>
+            <td>ALR #$AB</td>
+            <td>$4B</td>
             <td>2</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>Zero Page,X</td>
-            <td>ISB $44,X</td>
-            <td>$F7</td>
             <td>2</td>
-            <td>6</td>
-          </tr>
-          <tr>
-            <td>(Indirect,X)</td>
-            <td>ISB ($44,X)</td>
-            <td>$E3</td>
-            <td>2</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>(Indirect),Y</td>
-            <td>ISB ($44),Y</td>
-            <td>$F3</td>
-            <td>2</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>Absolute</td>
-            <td>ISB $4400</td>
-            <td>$EF</td>
-            <td>3</td>
-            <td>6</td>
-          </tr>
-          <tr>
-            <td>Absolute,X</td>
-            <td>ISB $4400,X</td>
-            <td>$FF</td>
-            <td>3</td>
-            <td>7</td>
-          </tr>
-          <tr>
-            <td>Absolute,Y</td>
-            <td>ISB $4400,Y</td>
-            <td>$FB</td>
-            <td>3</td>
-            <td>7</td>
           </tr>
           <tr>
             <th colspan=5>
@@ -107,7 +66,7 @@
                 </tr>
                 <tr>
                   <td>&#10003;</td>
-                  <td>&#10003;</td>
+                  <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -123,25 +82,19 @@
 
       <div class="opcode-text">
         <p>
-          Here is an example of how you might use this opcode:
+          This opcode ANDs the contents of the A register with an immediate value and then LSRs the result.
         </p>
-
-        <div class="codeblock">
-          <pre>
-      <span style="color: #eeeb42; font-weight: bold">isb</span><span style="color: #87daf3"> $FF</span><span style="color: #83f383;">         // E7 FF</span>
-          </pre>
-        </div>
 
         <p>
-          Here is the same code using equivalent instructions.
+          Here is an example of how you might use this opcode:
         </p>
+      </div>
 
-        <div class="codeblock">
-          <pre>
-      <span style="color: #eeeb42; font-weight: bold">inc</span><span style="color: #87daf3"> $FF</span></span>
-      <span style="color: #eeeb42; font-weight: bold">sbc</span><span style="color: #87daf3"> $FF</span></span>
-          </pre>
-        </div>
+      <div class="codeblock">
+        <pre>
+    <span style="color: #eeeb42; font-weight: bold">alr</span><span style="color: salmon;"> #</span><span style="color: #87daf3">$FE</span><span style="color: #83f383;">         // 4B FE</span>
+        </pre>
+      </div>
 
       <div id="navigation">
         <h2>Navigation:</h2>

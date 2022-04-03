@@ -38,6 +38,16 @@
         <div><button title="Increase memory by one then subtract memory from accumulator (with borrow)" class="button buttonOPCODE" onclick="cmdINS()">INS</button></div>
         <div><button title="ANDs the contents of the A register with an immediate value" class="button buttonOPCODE" onclick="cmdANC()">ANC</button></div>
         <div><button title="ANDs the contents of the A register with an immediate value" class="button buttonOPCODE" onclick="cmdANC2()">ANC2</button></div>
+        <div><button title="AND the A register with an immediate value then LSRs the result" class="button buttonOPCODE" onclick="cmdALR()">ALR</button></div>
+        <div><button title="AND the A register with an immediate value then LSRs the result" class="button buttonOPCODE" onclick="cmdASR()">ASR</button></div>
+        <div><button title="ANDs the A register with an immediate value then RORs the result" class="button buttonOPCODE" onclick="cmdARR()">ARR</button></div>
+        <div><button title="AND X + AND operand. Highly unstable, do not use" class="button buttonOPCODE" onclick="cmdANE()">ANE</button></div>
+        <div><button title="AND X + AND operand. Highly unstable, do not use" class="button buttonOPCODE" onclick="cmdXAA()">XAA</button></div>
+        <div><button title="CMP and DEX at once, sets flags like CMP" class="button buttonOPCODE" onclick="cmdSBX()">SBX</button></div>
+        <div><button title="Effectively same as normal SBC immediate, instr. E9" class="button buttonOPCODE" onclick="cmdUSBC()">USBC</button></div>
+        <div><button title="Effectively same as normal SBC immediate, instr. E9" class="button buttonOPCODE" onclick="cmdSBC2()">SBC2</button></div>
+        <div><button title="AND memory with stack pointer transfer result to accumulator" class="button buttonOPCODE" onclick="cmdLAS()">LAS</button></div>
+        <div><button title="AND memory with stack pointer transfer result to accumulator" class="button buttonOPCODE" onclick="cmdLAR()">LAR</button></div>
       </div>
       <br>
 

@@ -120,25 +120,32 @@
 
       <div class="opcode-text">
         <p>
-          Here is an example of how you might use this opcode:
+          This opcode loads both the accumulator and the X register with the contents of a memory location.
         </p>
 
-        <div class="codeblock">
-          <pre>
-      <span style="color: #eeeb42; font-weight: bold">lax</span><span style="color: #87daf3"> $8400,Y</span><span style="color: #83f383;">         // BF 00 84</span>
-          </pre>
-        </div>
+        <p>
+          Here is an example of how you might use this opcode:
+        </p>
+      </div>
 
+      <div class="codeblock">
+        <pre>
+    <span style="color: #eeeb42; font-weight: bold">lax</span><span style="color: #87daf3"> $8400,Y</span><span style="color: #83f383;">         // BF 00 84</span>
+        </pre>
+      </div>
+
+      <div class="opcode-text">
         <p>
           Here is the same code using equivalent instructions.
         </p>
+      </div>
 
-        <div class="codeblock">
-          <pre>
-      <span style="color: #eeeb42; font-weight: bold">lda</span><span style="color: #87daf3"> $8400,Y</span></span>
-      <span style="color: #eeeb42; font-weight: bold">ldx</span><span style="color: #87daf3"> $8400,Y</span></span>
-          </pre>
-        </div>
+      <div class="codeblock">
+        <pre>
+    <span style="color: #eeeb42; font-weight: bold">lda</span><span style="color: #87daf3"> $8400,Y</span></span>
+    <span style="color: #eeeb42; font-weight: bold">ldx</span><span style="color: #87daf3"> $8400,Y</span></span>
+        </pre>
+      </div>
 
       <div id="navigation">
         <h2>Navigation:</h2>

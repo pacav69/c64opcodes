@@ -69,53 +69,79 @@ function activate(context) {
         let highWordText = wordText.toUpperCase(); // Convert to Upper case for Title
         // • Correct page title text for duplicate opcodes • 
         if (highWordText === 'ASO') {
-            highWordText = 'ASO (SLO)';
+            highWordText = 'ASO - SLO';
+            lowWordText = 'slo';
         }
         if (highWordText === 'SLO') {
-            highWordText = 'SLO (ASO)';
+            highWordText = 'SLO - ASO';
         }
         if (highWordText === 'LSE') {
-            highWordText = 'LSE (SRE)';
-        }
-        if (highWordText === 'LSE') {
-            highWordText = 'LSE (SRE)';
+            highWordText = 'LSE - SRE';
+            lowWordText = 'sre';
         }
         if (highWordText === 'SRE') {
-            highWordText = 'SRE (LSE)';
-        }
-        if (highWordText === 'AXS') {
-            highWordText = 'AXS (SAX AAX)';
+            highWordText = 'SRE - LSE';
         }
         if (highWordText === 'SAX') {
-            highWordText = 'SAX (AXS AAX)';
+            highWordText = 'SAX - AXS - AAX';
         }
         if (highWordText === 'AAX') {
-            highWordText = 'AAX (SAX AXS)';
+            highWordText = 'AAX - SAX - AXS';
+            lowWordText = 'sax';
+        }
+        if (highWordText === 'AXS') {
+            highWordText = 'AXS - SAX - AAX';
+            lowWordText = 'sax';
         }
         if (highWordText === 'DCM') {
-            highWordText = 'DCM (DCP)';
+            highWordText = 'DCM - DCP';
+            lowWordText = 'dcp';
         }
         if (highWordText === 'DCP') {
-            highWordText = 'DCP (DCM)';
+            highWordText = 'DCP - DCM';
         }
         if (highWordText === 'ISC') {
-            highWordText = 'ISC (ISB INS)';
+            highWordText = 'ISC - ISB - INS';
         }
         if (highWordText === 'ISB') {
-            highWordText = 'ISB (ISC INS)';
+            highWordText = 'ISB - ISC - INS';
+            lowWordText = 'isc';
         }
         if (highWordText === 'INS') {
-            highWordText = 'INS (ISB ISC)';
+            highWordText = 'INS - ISB - ISC';
+            lowWordText = 'isc';
         }
-        if (highWordText === 'ANC2') {
-            highWordText = 'ANC2 (ANC)';
+        if (highWordText === 'ALR') {
+            highWordText = 'ALR - ASR';
         }
-        if (highWordText === 'ANC') {
-            highWordText = 'ANC (ANC2)';
+        if (highWordText === 'ASR') {
+            highWordText = 'ASR - ALR';
+            lowWordText = 'alr';
+        }
+        if (highWordText === 'ANE') {
+            highWordText = 'ANE - XAA';
+        }
+        if (highWordText === 'XAA') {
+            highWordText = 'XXA - ANE';
+            lowWordText = 'ane';
+        }
+        if (highWordText === 'USBC') {
+            highWordText = 'USBC - SBC2';
+        }
+        if (highWordText === 'SBC2') {
+            highWordText = 'SBC2 - USBC';
+            lowWordText = 'usbc';
+        }
+        if (highWordText === 'LAS') {
+            highWordText = 'LAS - LAR';
+        }
+        if (highWordText === 'LAR') {
+            highWordText = 'LAR - LAS';
+            lowWordText = 'las';
         }
 
         // • If word is opcode then display its html page in webview • 
-        if (lowWordText.match(/^(adc|and|asl|bcc|bcs|beq|bit|bmi|bne|bpl|brk|bvc|bvs|clc|cld|cli|clv|cmp|cpx|cpy|dec|dex|dey|eor|inc|inx|iny|jmp|jsr|lda|ldx|ldy|lsr|nop|ora|pha|php|pla|plp|rol|ror|rti|rts|sbc|sec|sed|sei|sta|stx|sty|tax|tay|tsx|txa|txs|tya|aso|slo|rla|lse|sre|rra|axs|sax|aax|lax|dcm|dcp|isc|isb|ins|anc2|anc)$/)) {
+        if (lowWordText.match(/^(adc|and|asl|bcc|bcs|beq|bit|bmi|bne|bpl|brk|bvc|bvs|clc|cld|cli|clv|cmp|cpx|cpy|dec|dex|dey|eor|inc|inx|iny|jmp|jsr|lda|ldx|ldy|lsr|nop|ora|pha|php|pla|plp|rol|ror|rti|rts|sbc|sec|sed|sei|sta|stx|sty|tax|tay|tsx|txa|txs|tya|aso|slo|rla|lse|sre|rra|axs|sax|aax|lax|dcm|dcp|isc|isb|ins|anc2|anc|alr|asr|arr|ane|sbx|usbc|sbc2|las|lar)$/)) {
             // • Local path to html file • 
             const htmlFilePath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', lowWordText + '.html'));
             var localhtml = fs.readFileSync(htmlFilePath.fsPath, 'utf8').toString();
