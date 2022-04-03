@@ -620,3 +620,17 @@ function cmdINS() {
         pageTitle: "INS (ISC ISB)"
     });
 }
+
+function cmdANC2() {
+    vscode.postMessage({
+        command: "anc2",
+        pageTitle: "anc2 (ANC)"
+    });
+}
+
+function cmdANC() {
+    vscode.postMessage({
+        command: "anc",
+        pageTitle: "anc (ANC2)"
+    });
+}
