@@ -536,3 +536,17 @@ function cmdRLA() {
         pageTitle: "RLA"
     });
 }
+
+function cmdLSE() {
+    vscode.postMessage({
+        command: "lse",
+        pageTitle: "LSE"
+    });
+}
+
+function cmdSRE() {
+    vscode.postMessage({
+        command: "sre",
+        pageTitle: "SRE"
+    });
+}

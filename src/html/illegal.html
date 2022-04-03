@@ -24,10 +24,12 @@
         <div><button title="Shift left one bit in memory, then OR accumulator with memory" class="button buttonOPCODE" onclick="cmdASO()">ASO</button></div>
         <div><button title="Shift left one bit in memory, then OR accumulator with memory" class="button buttonOPCODE" onclick="cmdSLO()">SLO</button></div>
         <div><button title="Rotate one bit left in memory, then AND accumulator with memory" class="button buttonOPCODE" onclick="cmdRLA()">RLA</button></div>
+        <div><button title="Shift right one bit in memory then EOR accumulator with memory" class="button buttonOPCODE" onclick="cmdLSE()">LSE</button></div>
+        <div><button title="Shift right one bit in memory then EOR accumulator with memory" class="button buttonOPCODE" onclick="cmdSRE()">SRE</button></div>
       </div>
       <br>
 
-      <div><button id="illegal-button" title="View List of All C64 Opcodes" class="button buttonMAIN" onclick="cmdVIEWALL()">View All Opcodes List</button></div>
+      <div><button id="legal-illegal-button" title="View List of All C64 Legal Opcodes" class="button buttonMAIN" onclick="cmdVIEWALL()">View All Legal Opcodes</button></div>
 
       <div id="navigation">
         <h2 id="navigation-text">Navigation:</h2>
