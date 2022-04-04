@@ -80,6 +80,10 @@
         </table>
       </div>
 
+      <div class="opcode-flags">
+        <p>+ add 1 cycle if page boundary crossed.<br>The negative flag is set if the result is negative, i.e. has it's most significant bit set (not in decimal mode).<br>The zero flag is set if the result is zero, or cleared if it is non-zero (not in decimal mode).</p>
+      </div>
+
       <div class="opcode-text">
         <p>
           This opcode ANDs the contents of a memory location with the contents of the stack pointer register and stores the result in the accumulator, the X register, and the stack pointer.

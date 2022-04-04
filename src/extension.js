@@ -139,9 +139,60 @@ function activate(context) {
             highWordText = 'LAR - LAS';
             lowWordText = 'las';
         }
+        if (highWordText === 'JAM') {
+            highWordText = 'JAM - KIL - HLT';
+        }
+        if (highWordText === 'KIL') {
+            highWordText = 'KIL - JAM - HLT';
+            lowWordText = 'jam';
+        }
+        if (highWordText === 'HLT') {
+            highWordText = 'HLT - JAM - KIL';
+            lowWordText = 'jam';
+        }
+        if (highWordText === 'SHA') {
+            highWordText = 'SHA - AXA - AHX';
+        }
+        if (highWordText === 'AXA') {
+            highWordText = 'AXA - SHA - AHX';
+            lowWordText = 'sha';
+        }
+        if (highWordText === 'AHX') {
+            highWordText = 'AHX - SHA - AXA';
+            lowWordText = 'sha';
+        }
+        if (highWordText === 'SHX') {
+            highWordText = 'SHX - SXA - XAS';
+        }
+        if (highWordText === 'SXA') {
+            highWordText = 'SXA - SHX - XAS';
+            lowWordText = 'shx';
+        }
+        if (highWordText === 'XAS') {
+            highWordText = 'XAS - SHX - SXA';
+            lowWordText = 'shx';
+        }
+        if (highWordText === 'SHY') {
+            highWordText = 'SHY - SYA - SAY';
+        }
+        if (highWordText === 'SYA') {
+            highWordText = 'SYA - SHY - SAY';
+            lowWordText = 'shy';
+        }
+        if (highWordText === 'SAY') {
+            highWordText = 'SAY - SHY - SYA';
+            lowWordText = 'shy';
+        }
+        if (highWordText === 'TAS') {
+            highWordText = 'TAS - SHS';
+        }
+        if (highWordText === 'SHS') {
+            highWordText = 'SHS - TAS';
+            lowWordText = 'tas';
+        }
 
         // • If word is opcode then display its html page in webview • 
-        if (lowWordText.match(/^(adc|and|asl|bcc|bcs|beq|bit|bmi|bne|bpl|brk|bvc|bvs|clc|cld|cli|clv|cmp|cpx|cpy|dec|dex|dey|eor|inc|inx|iny|jmp|jsr|lda|ldx|ldy|lsr|nop|ora|pha|php|pla|plp|rol|ror|rti|rts|sbc|sec|sed|sei|sta|stx|sty|tax|tay|tsx|txa|txs|tya|aso|slo|rla|lse|sre|rra|axs|sax|aax|lax|dcm|dcp|isc|isb|ins|anc2|anc|alr|asr|arr|ane|sbx|usbc|sbc2|las|lar)$/)) {
+        if (lowWordText.match(/^(adc|and|asl|bcc|bcs|beq|bit|bmi|bne|bpl|brk|bvc|bvs|clc|cld|cli|clv|cmp|cpx|cpy|dec|dex|dey|eor|inc|inx|iny|jmp|jsr|lda|ldx|ldy|lsr|nop|ora|pha|php|pla|plp|rol|ror|rti|rts|sbc|sec|sed|sei|sta|stx|sty|tax|tay|tsx|txa|txs|tya|aso|slo|rla|lse|sre|rra|axs|sax|aax|lax|dcm|dcp|isc|isb|ins|anc2|anc|alr|asr|arr|ane|sbx|usbc|sbc2|las|lar|illegalnop|jam|kil|hlt|sha|axa|ahx|shx|sxa|xas|shy|sya|say|tas|shs|lxa)$/)) {
             // • Local path to html file • 
             const htmlFilePath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', lowWordText + '.html'));
             var localhtml = fs.readFileSync(htmlFilePath.fsPath, 'utf8').toString();

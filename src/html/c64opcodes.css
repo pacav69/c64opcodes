@@ -389,6 +389,24 @@ table.modes td {
   width: 75px;
 }
 
+.buttonILLEGAL-STABLE {
+  background-color: rgb(225, 255, 225);
+  color: black;
+  width: 75px;
+}
+
+.buttonILLEGAL-UNSTABLE {
+  background-color: rgb(255, 250, 185);
+  color: black;
+  width: 75px;
+}
+
+.buttonILLEGAL-HIGHUNSTABLE {
+  background-color: rgb(255, 200, 190);
+  color: black;
+  width: 75px;
+}
+
 .buttonOPCODE:hover {
   background-color: #008CBA;
   color: white;

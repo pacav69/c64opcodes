@@ -665,7 +665,7 @@ function cmdANE() {
 
 function cmdXAA() {
     vscode.postMessage({
-        command: "xaa",
+        command: "ane",
         pageTitle: "XAA - ANE"
     });
 }
@@ -702,5 +702,117 @@ function cmdLAR() {
     vscode.postMessage({
         command: "las",
         pageTitle: "LAR - LAS"
+    });
+}
+
+function cmdILLEGALNOP() {
+    vscode.postMessage({
+        command: "illegalnop",
+        pageTitle: "Illegal NOP's"
+    });
+}
+
+function cmdJAM() {
+    vscode.postMessage({
+        command: "jam",
+        pageTitle: "JAM - KIL - HLT"
+    });
+}
+
+function cmdKIL() {
+    vscode.postMessage({
+        command: "jam",
+        pageTitle: "KIL - JAM - HLT"
+    });
+}
+
+function cmdHLT() {
+    vscode.postMessage({
+        command: "jam",
+        pageTitle: "HLT - JAM - KIL"
+    });
+}
+
+function cmdSHA() {
+    vscode.postMessage({
+        command: "sha",
+        pageTitle: "SHA - AXA - AHX"
+    });
+}
+
+function cmdAXA() {
+    vscode.postMessage({
+        command: "sha",
+        pageTitle: "AXA - SHA - AHX"
+    });
+}
+
+function cmdAHX() {
+    vscode.postMessage({
+        command: "sha",
+        pageTitle: "AHX - SHA - AXA"
+    });
+}
+
+function cmdSHX() {
+    vscode.postMessage({
+        command: "shx",
+        pageTitle: "SHX - SXA - XAS"
+    });
+}
+
+function cmdSXA() {
+    vscode.postMessage({
+        command: "shx",
+        pageTitle: "SXA - SHX - XAS"
+    });
+}
+
+function cmdXAS() {
+    vscode.postMessage({
+        command: "shx",
+        pageTitle: "XAS - SHX - SXA"
+    });
+}
+
+function cmdSHY() {
+    vscode.postMessage({
+        command: "shy",
+        pageTitle: "SHY - SYA - SAY"
+    });
+}
+
+function cmdSYA() {
+    vscode.postMessage({
+        command: "shy",
+        pageTitle: "SYA - SHY - SAY"
+    });
+}
+
+function cmdSAY() {
+    vscode.postMessage({
+        command: "shy",
+        pageTitle: "SAY - SHY - SYA"
+    });
+}
+
+function cmdTAS() {
+    vscode.postMessage({
+        command: "tas",
+        pageTitle: "TAS - SHS"
+    });
+}
+
+function cmdSHS() {
+    vscode.postMessage({
+        command: "tas",
+        pageTitle: "SHS - TAS"
+    });
+}
+
+function cmdLXA() {
+    vscode.postMessage({
+        command: "lxa",
+        pageTitle: "LXA"
     });
 }

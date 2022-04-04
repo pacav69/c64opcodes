@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instruction Set Reference for the 6510 Microprocessor: OPCODE</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src vscode-resource: 'self' 'unsafe-inline'; font-src vscode-resource: ; img-src vscode-resource: ; style-src vscode-resource: 'self' 'unsafe-inline';" />
+  <link href="${stylesc64opcodesUri}" type="text/css" rel="stylesheet">
+  <script src="${scriptUri}"></script>
+  <style>
+    /*C64FONT*/
+  </style>
+</head>
+
+<body>
+  <div id="page-container">
+    <div id="content-wrap">
+      <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
+        <div id="header-text">
+          <h1>JAM - KIL - HLT</h1>
+          <h2 style="text-align:center;">These instructions freeze the CPU</h2>
+          <h2 style="text-align:center;">Only a reset will restart execution</h2>
+        </div>
+      </div>
+
+      <div class="opcode-flags">
+        <p>
+          &nbsp;<br>
+        </p>
+      </div>
+      
+      <table class="text-table">
+        <thead>
+          <tr>
+            <th>Opc.</th>
+            <th>Mnemonic</th>
+            <th>Function</th>
+            <th>Size</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$02</td>
+            <td>JAM</td>
+            <td>CPU lock-up</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>$12</td>
+            <td>JAM</td>
+            <td>CPU lock-up</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>$22</td>
+            <td>JAM</td>
+            <td>CPU lock-up</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>$32</td>
+            <td>JAM</td>
+            <td>CPU lock-up</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>$42</td>
+            <td>JAM</td>
+            <td>CPU lock-up</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>$52</td>
+            <td>JAM</td>
+            <td>CPU lock-up</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>$62</td>
+            <td>JAM</td>
+            <td>CPU lock-up</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>$72</td>
+            <td>JAM</td>
+            <td>CPU lock-up</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>$92</td>
+            <td>JAM</td>
+            <td>CPU lock-up</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>$B2</td>
+            <td>JAM</td>
+            <td>CPU lock-up</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>$D2</td>
+            <td>JAM</td>
+            <td>CPU lock-up</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>$F2</td>
+            <td>JAM</td>
+            <td>CPU lock-up</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      
+      <div class="opcode-text">
+        <p>
+          JAM crashes the microprocessor. When one of these opcodes is executed, the byte following the opcode will be fetched, data and address bus will be set to $FF (all 1s) and program execution ceases. No hardware interrupts will execute either. Only a reset will restart execution. This opcode leaves no trace of any operation performed! No registers or flags affected.
+        </p>
+      </div>
+
+      <div id="navigation">
+        <h2>Navigation:</h2>
+        <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
+        <button title="View List of All Illegal C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdILLEGAL()">View All Illegal Opcodes List</button>
+      </div>
+    </div>
+    <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
+  </div>
+</body>
+
+</html>
