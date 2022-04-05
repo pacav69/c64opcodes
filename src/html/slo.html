@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instruction Set Reference for the 6510 Microprocessor: OPCODE</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src vscode-resource: 'self' 'unsafe-inline'; font-src vscode-resource: ; img-src vscode-resource: ; style-src vscode-resource: 'self' 'unsafe-inline';" />
+  <link href="${stylesc64opcodesUri}" type="text/css" rel="stylesheet">
+  <script src="${scriptUri}"></script>
+  <style>
+    /*C64FONT*/
+  </style>
+</head>
+
+<body>
+  <div id="page-container">
+    <div id="content-wrap">
+      <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
+        <div id="header-text">
+          <h1>SLO (ASO)</h1>
+          <h2>ASL oper + ORA oper</h2>
+          <h2>M = C <- [76543210] <- 0, A OR M -> A</h2>
+        </div>
+      </div>
+
+      <div class="opcode-table">
+        <table class='modes'>
+          <tr>
+            <th>
+              Mode
+            </th>
+            <th>
+              Syntax
+            </th>
+            <th>
+              HEX
+            </th>
+            <th>
+              LEN
+            </th>
+            <th>
+              TIME
+            </th>
+          </tr>
+          <tr>
+            <td>Zero Page</td>
+            <td>SLO $44</td>
+            <td>$07</td>
+            <td>2</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Zero Page,X</td>
+            <td>SLO $44,X</td>
+            <td>$17</td>
+            <td>2</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>(Indirect,X)</td>
+            <td>SLO ($44,X)</td>
+            <td>$93</td>
+            <td>2</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>(Indirect),Y</td>
+            <td>SLO ($44),Y</td>
+            <td>$13</td>
+            <td>2</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>Absolute</td>
+            <td>SLO $4400</td>
+            <td>$0F</td>
+            <td>3</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Absolute,X</td>
+            <td>SLO $4400,X</td>
+            <td>$1F</td>
+            <td>3</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>Absolute,Y</td>
+            <td>SLO $4400,Y</td>
+            <td>$1B</td>
+            <td>3</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <th colspan=5>
+              <table class='modes flags'>
+                <tr>
+                  <td>N</td>
+                  <td>V</td>
+                  <td>&#151;</td>
+                  <td>B</td>
+                  <td>D</td>
+                  <td>I</td>
+                  <td>Z</td>
+                  <td>C</td>
+                </tr>
+                <tr>
+                  <td>&#10003;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+              </table>
+            </th>
+          </tr>
+        </table>
+      </div>
+
+      <div class="opcode-text">
+        <p>
+          This opcode ASLs the contents of a memory location and then ORs the result with the accumulator.
+        </p>
+
+        <p>
+          Here is an example of how you might use this opcode:
+        </p>
+      </div>
+
+      <div class="codeblock">
+        <pre>
+    <span style="color: #eeeb42; font-weight: bold">slo</span><span style="color: #87daf3"> $C010</span><span style="color: #83f383;">         // 0F 10 C0</span>
+        </pre>
+      </div>
+
+      <div class="opcode-text">
+        <p>
+          Here is the same code using equivalent instructions.
+        </p>
+      </div>
+
+      <div class="codeblock">
+        <pre>
+    <span style="color: #eeeb42; font-weight: bold">asl</span><span style="color: #87daf3"> $C010</span></span>
+    <span style="color: #eeeb42; font-weight: bold">ora</span><span style="color: #87daf3"> $C010</span></span>
+        </pre>
+      </div>
+
+      <div id="navigation">
+        <h2>Navigation:</h2>
+        <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
+        <button title="View List of All Illegal C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdILLEGAL()">View All Illegal Opcodes List</button>
+      </div>
+    </div>
+    <footer id="footer">C64 Opcodes Extension, By WillASM</footer>
+  </div>
+</body>
+
+</html>

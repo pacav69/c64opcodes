@@ -5,11 +5,11 @@
 
 # c64opcodes
 
-This is a "WORK IN PROGRESS" extension For VSCode. It displays a Webview page with detailed information on 6502/6510 opcodes. To execute the extension run the command `Open C64 Opcodes List` from the command pallete. If the cursor is on an opcode when run, that opcodes detailed information will be displayed, otherwise the extensions menu page will load allowing you to browse the opcode lists.
+This extension for VSCode displays a Webview page with detailed information on 6502/6510 opcodes. To execute the extension run the command `Open C64 Opcodes List` from the command pallete. If the cursor is on an opcode when run, that opcodes detailed information will be displayed, otherwise the extensions menu page will load allowing you to browse the opcode lists.
 
 Note: The opcode text does not need to be selected, simply place the cursor on the opcode then run the command
 
-Currently all normal opcodes are completed. (Still need to add Illegal Opcodes) The extension however is usable in it's current state.
+All normal and illegal opcodes are included.
 
 
 ## Features
@@ -34,7 +34,6 @@ If you use [Kick Assembler](http://theweb.dk/KickAssembler/Main.html#frontpage)]
 
 
 ## Todo
-- Add illegal opcodes.
 - Add more detailed information on other topics such as CPU, Flags, etc.
 
 
@@ -57,5 +56,10 @@ Also the website [www.c64-wiki.com](https://www.c64-wiki.com/wiki/Opcode) for re
 
 The C64 Font created by [Devin D. Cook](http://www.DevinCook.com) used optionally in the Webviews.
 
+Illegal Opcode reference [6502 “Illegal” Opcodes Demystified](https://www.masswerk.at/nowgobang/2021/6502-illegal-opcodes)
+
+Illegal Opcode reference [6502 Instruction Set](https://www.masswerk.at/6502/6502_instruction_set.html)
+
+Illegal Opcode reference [NMOS 6510 Unintended Opcodes (No More Secrets)](http://hitmen.c02.at/files/docs/c64/NoMoreSecrets-NMOS6510UnintendedOpcodes-20162412.pdf)
 
 **Enjoy!**

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instruction Set Reference for the 6510 Microprocessor: NOP</title>
+  <title>Instruction Set Reference for the 6510 Microprocessor: OPCODE</title>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src vscode-resource: 'self' 'unsafe-inline'; font-src vscode-resource: ; img-src vscode-resource: ; style-src vscode-resource: 'self' 'unsafe-inline';" />
   <link href="${stylesc64opcodesUri}" type="text/css" rel="stylesheet">
   <script src="${scriptUri}"></script>
@@ -18,9 +18,9 @@
     <div id="content-wrap">
       <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
         <div id="header-text">
-          <h1>NOP</h1>
-          <h2 style="text-align:center;">No OPeration</h2>
-          <h2 style="text-align:center;">Operation: No Operation (2 cycles)</h2>
+          <h1>ANE (XAA)</h1>
+          <h2>* AND X + AND oper</h2>
+          <h2>(A OR CONST) AND X AND oper -> A</h2>
         </div>
       </div>
 
@@ -44,10 +44,11 @@
             </th>
           </tr>
           <tr>
-            <td>Implied</td>
-            <td>NOP</td>
-            <td>$EA</td>
-            <td>1</td>
+          <tr>
+            <td>Immediate</td>
+            <td>ANE #$AB</td>
+            <td>$8B</td>
+            <td>2</td>
             <td>2</td>
           </tr>
           <tr>
@@ -64,13 +65,13 @@
                   <td>C</td>
                 </tr>
                 <tr>
+                  <td>&#10003;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
+                  <td>&#10003;</td>
                   <td>&nbsp;</td>
                 </tr>
               </table>
@@ -80,19 +81,29 @@
       </div>
 
       <div class="opcode-text">
-        <p>Strangely enough, an instruction that does nothing could be more useful than it seems at first glance. This instruction, for the simple fact that spends execution clock cycles, namely 2, can be used to synchronize subroutines to reach a given
-          number of cycles. But the main task of this particular instruction is to facilitate debugging. It is very convenient to insert a few NOP instructions to "turn off" temporarily sections of code that we think may be causing problems or for patching
-          sections of code.</p>
+        <p>
+          A base value in A is determined based on the contets of A and a constant, which may be typically $00, $ff, $ee, etc. The value of this constant depends on temerature, the chip series, and maybe other factors, as well.
+        </p>
+
+        <p>
+          In order to eliminate these uncertaincies from the equation, use either 0 as the operand or a value of $FF in the accumulator.
+        </p>
+
+        <p>
+          Here is an example of how you might use this opcode:
+        </p>
       </div>
 
-      <div style="padding-bottom: 29vh;"> </div>
+        <div class="codeblock">
+          <pre>
+    <span style="color: #eeeb42; font-weight: bold">ane</span><span style="color: salmon;"> #</span><span style="color: #87daf3">$44</span><span style="color: #83f383;">         // 8B 44</span>
+          </pre>
+        </div>
 
       <div id="navigation">
         <h2>Navigation:</h2>
         <button title="Return to Home Page" class="button buttonNAVIGATION" onclick="cmdHOME()">Home</button>
-        <button title="View List of All C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdVIEWALL()">View All Opcodes List</button>
-        <button title="View List of All Other Instructions" class="button buttonNAVIGATION" onclick="cmdOTHER()">View Other Instructions</button>
-        <button title="View List of All Illegal NOP's" class="button buttonNAVIGATION" onclick="cmdILLEGALNOP()">View Illegal NOP's</button>
+        <button title="View List of All Illegal C64 Opcodes" class="button buttonNAVIGATION" onclick="cmdILLEGAL()">View All Illegal Opcodes List</button>
       </div>
     </div>
     <footer id="footer">C64 Opcodes Extension, By WillASM</footer>

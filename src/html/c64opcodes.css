@@ -237,7 +237,18 @@ h6 {
   text-align: center;
 }
 
-#illegal-button {
+.view-all-illegal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%);
+  grid-template-rows: repeat(13, 45px);
+  width: 100%;
+  position: relative;
+  text-align: center;
+  padding-top: 1rem;
+  padding-top: 1rem;
+}
+
+#legal-illegal-button {
   margin: 0 auto;
   display: block;
 }
@@ -303,11 +314,11 @@ h6 {
 /*----------------------------------[ TABLES ]-----------------------------------*/
 
 table.modes {
-  border: 4px solid var(--table-color);
+  border: 3px solid var(--table-color);
   border-collapse: separate;
   border-radius: 5px;
-  border-left-width: 5px;
-  border-top-width: 1px;
+  border-left-width: 4px;
+  border-top-width: 5px;
   margin-left: auto;
   margin-right: auto;
   border-left: 1;
@@ -334,6 +345,24 @@ table.modes td {
   border-bottom-width: 1px;
   padding: 10px;
   font-size: small;
+}
+
+.text-table {
+  border: 1px solid;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  align-content: center
+}
+
+.text-table th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 
@@ -369,6 +398,24 @@ table.modes td {
   background-color: white;
   color: black;
   width: 75px;
+}
+
+.buttonILLEGAL-STABLE {
+  background-color: rgb(225, 255, 225);
+  color: black;
+  width: 200px;
+}
+
+.buttonILLEGAL-UNSTABLE {
+  background-color: rgb(255, 250, 185);
+  color: black;
+  width: 200px;
+}
+
+.buttonILLEGAL-HIGHUNSTABLE {
+  background-color: rgb(255, 200, 190);
+  color: black;
+  width: 200px;
 }
 
 .buttonOPCODE:hover {

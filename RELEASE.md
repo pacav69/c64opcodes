@@ -1,6 +1,14 @@
 # Release Notes
-## [0.0.1] 2022-01-21
-- Initial Release
+# Release Notes
+
+<!-- ## [v-inc] ${YEAR4}-${MONTHNUMBER}-${DATE} -->
+
+## [0.0.2] 2022-04-05
+### Added
+- Illegal Opcodes
+### Updated 
+- HTML Content
+- Readme.md
 
 For a full list of changes, please see the projects [Changelog](CHANGELOG.md) file.
 

@@ -17,14 +17,14 @@
 <body>
   <div id="page-container">
     <div id="content-wrap">
-      <div id="header"> <img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
+      <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
         <div id="header-text">
           <h1>Welcome to C64 Opcodes<br>Extension for VSCode</h1>
         </div>
       </div>
 
       <div id="sidebar">
-        <button title="View List of All C64 Opcodes" class="button buttonMAIN" onclick="cmdVIEWALL()">View All Opcodes List</button><br>
+        <button title="View List of All C64 Opcodes" class="button buttonMAIN" onclick="cmdVIEWALL()">View All Legal Opcodes</button><br>
         <!-- <button title="View List of All Processor Flags" class="button buttonMAIN" onclick="cmdPFLAGS()">Processor Flags</button><br> -->
         <button title="View List of All Bitwise Instructions" class="button buttonMAIN" onclick="cmdBITWISE()">Bitwise Instructions</button><br>
         <button title="View List of All Branch Instructions" class="button buttonMAIN" onclick="cmdBRANCH()">Branch Instructions</button><br>
@@ -36,7 +36,7 @@
         <button title="View List of All Register Instructions" class="button buttonMAIN" onclick="cmdREGISTER()">Register Instructions</button><br>
         <button title="View List of All Stack Instructions" class="button buttonMAIN" onclick="cmdSTACK()">Stack Instructions</button><br>
         <button title="View List of All Other Instructions" class="button buttonMAIN" onclick="cmdOTHER()">Other Instructions</button><br>
-        <button title="View List of All Illegal Instructions" class="button buttonMAIN" onclick="cmdILLEGAL()">Illegal Instructions</button><br>
+        <button title="View List of All Illegal Instructions" class="button buttonMAIN" onclick="cmdILLEGAL()">View All Illegal Opcodes</button><br>
         <!-- <button title="Open Test Page" class="button buttonMAIN" onclick="cmdTEST()">Open Test Page</button><br> -->
       </div>
       <div class="home-body">
@@ -61,6 +61,12 @@
         <p>Also the website <a href="https://www.c64-wiki.com/wiki/Opcode">www.c64-wiki.com</a> for reference.</p>
 
         <p>The C64 Font created by <a href="http://www.DevinCook.com">Devin D. Cook</a> used optionally in the Webviews.</p>
+
+        <p>Illegal Opcode reference <a href="https://www.masswerk.at/nowgobang/2021/6502-illegal-opcodes">6502 “Illegal” Opcodes Demystified</a>.</p>
+
+        <p>Illegal Opcode reference <a href="https://www.masswerk.at/6502/6502_instruction_set.html">6502 Instruction Set</a>.</p>
+
+        <p>Illegal Opcode reference <a href="http://hitmen.c02.at/files/docs/c64/NoMoreSecrets-NMOS6510UnintendedOpcodes-20162412.pdf">NMOS 6510 Unintended Opcodes (No More Secrets)</a>.</p>
         <br>
         <h4>I hope you enjoy this extension!</h4>
         <h4>William McKeever</h4>
