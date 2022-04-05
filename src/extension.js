@@ -69,130 +69,138 @@ function activate(context) {
         let highWordText = wordText.toUpperCase(); // Convert to Upper case for Title
         // • Correct page title text for duplicate opcodes • 
         if (highWordText === 'ASO') {
-            highWordText = 'ASO - SLO';
+            highWordText = 'ASO (SLO)';
             lowWordText = 'slo';
         }
         if (highWordText === 'SLO') {
-            highWordText = 'SLO - ASO';
+            highWordText = 'SLO (ASO)';
         }
         if (highWordText === 'LSE') {
-            highWordText = 'LSE - SRE';
+            highWordText = 'LSE (SRE)';
             lowWordText = 'sre';
         }
         if (highWordText === 'SRE') {
-            highWordText = 'SRE - LSE';
+            highWordText = 'SRE (LSE)';
         }
         if (highWordText === 'SAX') {
-            highWordText = 'SAX - AXS - AAX';
+            highWordText = 'SAX (AXS AAX)';
         }
         if (highWordText === 'AAX') {
-            highWordText = 'AAX - SAX - AXS';
+            highWordText = 'AAX (SAX AXS)';
             lowWordText = 'sax';
         }
         if (highWordText === 'AXS') {
-            highWordText = 'AXS - SAX - AAX';
+            highWordText = 'AXS (SAX AAX)';
             lowWordText = 'sax';
         }
         if (highWordText === 'DCM') {
-            highWordText = 'DCM - DCP';
+            highWordText = 'DCM (DCP)';
             lowWordText = 'dcp';
         }
         if (highWordText === 'DCP') {
-            highWordText = 'DCP - DCM';
+            highWordText = 'DCP (DCM)';
         }
         if (highWordText === 'ISC') {
-            highWordText = 'ISC - ISB - INS';
+            highWordText = 'ISC (ISB INS)';
         }
         if (highWordText === 'ISB') {
-            highWordText = 'ISB - ISC - INS';
+            highWordText = 'ISB (ISC INS)';
             lowWordText = 'isc';
         }
         if (highWordText === 'INS') {
-            highWordText = 'INS - ISB - ISC';
+            highWordText = 'INS (ISB ISC)';
             lowWordText = 'isc';
         }
         if (highWordText === 'ALR') {
-            highWordText = 'ALR - ASR';
+            highWordText = 'ALR (ASR)';
         }
         if (highWordText === 'ASR') {
-            highWordText = 'ASR - ALR';
+            highWordText = 'ASR (ALR)';
             lowWordText = 'alr';
         }
         if (highWordText === 'ANE') {
-            highWordText = 'ANE - XAA';
+            highWordText = 'ANE (XAA)';
         }
         if (highWordText === 'XAA') {
-            highWordText = 'XXA - ANE';
+            highWordText = 'XXA (ANE)';
             lowWordText = 'ane';
         }
         if (highWordText === 'USBC') {
-            highWordText = 'USBC - SBC2';
+            highWordText = 'USBC (SBC2 SBC)';
         }
         if (highWordText === 'SBC2') {
-            highWordText = 'SBC2 - USBC';
+            highWordText = 'SBC2 (USBC SBC)';
             lowWordText = 'usbc';
         }
         if (highWordText === 'LAS') {
-            highWordText = 'LAS - LAR';
+            highWordText = 'LAS (LAR LAE)';
         }
         if (highWordText === 'LAR') {
-            highWordText = 'LAR - LAS';
+            highWordText = 'LAR (LAS LAE)';
+            lowWordText = 'las';
+        }
+        if (highWordText === 'LAE') {
+            highWordText = 'LAE (LAS LAR)';
             lowWordText = 'las';
         }
         if (highWordText === 'JAM') {
-            highWordText = 'JAM - KIL - HLT';
+            highWordText = 'JAM (KIL HLT)';
         }
         if (highWordText === 'KIL') {
-            highWordText = 'KIL - JAM - HLT';
+            highWordText = 'KIL (JAM HLT)';
             lowWordText = 'jam';
         }
         if (highWordText === 'HLT') {
-            highWordText = 'HLT - JAM - KIL';
+            highWordText = 'HLT (JAM KIL)';
             lowWordText = 'jam';
         }
         if (highWordText === 'SHA') {
-            highWordText = 'SHA - AXA - AHX';
+            highWordText = 'SHA (AXA AHX)';
         }
         if (highWordText === 'AXA') {
-            highWordText = 'AXA - SHA - AHX';
+            highWordText = 'AXA (SHA AHX)';
             lowWordText = 'sha';
         }
         if (highWordText === 'AHX') {
-            highWordText = 'AHX - SHA - AXA';
+            highWordText = 'AHX (SHA AXA)';
             lowWordText = 'sha';
         }
         if (highWordText === 'SHX') {
-            highWordText = 'SHX - SXA - XAS';
+            highWordText = 'SHX (A11 SXA XAS)';
+        }
+        if (highWordText === 'A11') {
+            highWordText = 'A11 (SHX SXA XAS)';
+            lowWordText = 'shx';
         }
         if (highWordText === 'SXA') {
-            highWordText = 'SXA - SHX - XAS';
+            highWordText = 'SXA (SHX A11 XAS)';
             lowWordText = 'shx';
         }
         if (highWordText === 'XAS') {
-            highWordText = 'XAS - SHX - SXA';
+            highWordText = 'XAS (SHX A11 SXA)';
             lowWordText = 'shx';
         }
         if (highWordText === 'SHY') {
-            highWordText = 'SHY - SYA - SAY';
+            highWordText = 'SHY (A11 SYA SAY)';
         }
         if (highWordText === 'SYA') {
-            highWordText = 'SYA - SHY - SAY';
+            highWordText = 'SYA (SHY A11 SAY)';
             lowWordText = 'shy';
         }
         if (highWordText === 'SAY') {
-            highWordText = 'SAY - SHY - SYA';
+            highWordText = 'SAY (SHY A11 SYA)';
             lowWordText = 'shy';
         }
         if (highWordText === 'TAS') {
-            highWordText = 'TAS - SHS';
+            highWordText = 'TAS (SHS)';
         }
         if (highWordText === 'SHS') {
-            highWordText = 'SHS - TAS';
+            highWordText = 'SHS (TAS)';
             lowWordText = 'tas';
         }
 
         // • If word is opcode then display its html page in webview • 
-        if (lowWordText.match(/^(adc|and|asl|bcc|bcs|beq|bit|bmi|bne|bpl|brk|bvc|bvs|clc|cld|cli|clv|cmp|cpx|cpy|dec|dex|dey|eor|inc|inx|iny|jmp|jsr|lda|ldx|ldy|lsr|nop|ora|pha|php|pla|plp|rol|ror|rti|rts|sbc|sec|sed|sei|sta|stx|sty|tax|tay|tsx|txa|txs|tya|aso|slo|rla|lse|sre|rra|axs|sax|aax|lax|dcm|dcp|isc|isb|ins|anc2|anc|alr|asr|arr|ane|sbx|usbc|sbc2|las|lar|illegalnop|jam|kil|hlt|sha|axa|ahx|shx|sxa|xas|shy|sya|say|tas|shs|lxa)$/)) {
+        if (lowWordText.match(/^(adc|and|asl|bcc|bcs|beq|bit|bmi|bne|bpl|brk|bvc|bvs|clc|cld|cli|clv|cmp|cpx|cpy|dec|dex|dey|eor|inc|inx|iny|jmp|jsr|lda|ldx|ldy|lsr|nop|ora|pha|php|pla|plp|rol|ror|rti|rts|sbc|sec|sed|sei|sta|stx|sty|tax|tay|tsx|txa|txs|tya|a11|aax|ahx|alr|anc|anc2|ane|arr|aso|asr|axa|axs|dcm|dcp|hlt|illegalnop|ins|isb|isc|jam|kil|lae|lar|las|lax|lse|lxa|rla|rra|sax|say|sbc2|sbx|sha|shs|shx|shy|slo|sre|sxa|sya|tas|usbc|xas)$/)) {
             // • Local path to html file • 
             const htmlFilePath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', lowWordText + '.html'));
             var localhtml = fs.readFileSync(htmlFilePath.fsPath, 'utf8').toString();

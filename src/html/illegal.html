@@ -17,57 +17,37 @@
   <div id="page-container">
     <div id="content-wrap">
       <div id="header"><img src="${imgc64screenUri}" alt="c64 logo" width="264" height="180" id="header-image">
-        <h1 id="header-text">View All Illegal Opcodes</h1>
-        <h2 id="header-text">Most variations in naming included<br>Select Opcode From Below</h2>
-        <h2 id="header-text"></h2>
+        <div id="header-text">
+          <h1>View All Illegal Opcodes</h1>
+          <h2>Most variations in naming included<br>Select Opcode From Below</h2>
+        </div>
       </div>
-
-      <div class="view-all-grid">
-        <div><button title="Alias for SAX - AND the contents of the A and X registers" class="button buttonILLEGAL-STABLE" onclick="cmdAAX()">AAX</button></div>
-        <div><button title="Alias for SHA - Stores A AND X AND (high-byte of addr. + 1) at addr" class="button buttonILLEGAL-UNSTABLE" onclick="cmdAHX()">AHX</button></div>
-        <div><button title="AND the A register with an immediate value then LSRs the result" class="button buttonILLEGAL-STABLE" onclick="cmdALR()">ALR</button></div>
+    
+      <div class="view-all-illegal-grid">
+        <div><button title="AND the A register with an immediate value then LSRs the result" class="button buttonILLEGAL-STABLE" onclick="cmdALR()">ALR (ASR)</button></div>
         <div><button title="ANDs the contents of the A register with an immediate value" class="button buttonILLEGAL-STABLE" onclick="cmdANC()">ANC</button></div>
         <div><button title="ANDs the contents of the A register with an immediate value" class="button buttonILLEGAL-STABLE" onclick="cmdANC2()">ANC2</button></div>
-        <div><button title="AND X + AND operand. Highly unstable, do not use" class="button buttonILLEGAL-HIGHUNSTABLE" onclick="cmdANE()">ANE</button></div>
+        <div><button title="AND X + AND operand. Highly unstable, do not use" class="button buttonILLEGAL-HIGHUNSTABLE" onclick="cmdANE()">ANE (XAA)</button></div>
         <div><button title="ANDs the A register with an immediate value then RORs the result" class="button buttonILLEGAL-STABLE" onclick="cmdARR()">ARR</button></div>
-        <div><button title="Alias for SLO - Shift left one bit in memory, then OR accumulator with memory" class="button buttonILLEGAL-STABLE" onclick="cmdASO()">ASO</button></div>
-        <div><button title="Alias for ALR - AND the A register with an immediate value then LSRs the result" class="button buttonILLEGAL-STABLE" onclick="cmdASR()">ASR</button></div>
-        <div><button title="Alias for SHA - Stores A AND X AND (high-byte of addr. + 1) at addr" class="button buttonILLEGAL-UNSTABLE" onclick="cmdAXA()">AXA</button></div>
-        <div><button title="Alias for SAX - AND the contents of the A and X registers" class="button buttonILLEGAL-STABLE" onclick="cmdAXS()">AXS</button></div>
-        <div><button title="Alias for DCP - DECs a memory location then CMPs the result with the Accumulator" class="button buttonILLEGAL-STABLE" onclick="cmdDCM()">DCM</button></div>
-        <div><button title="DECs a memory location then CMPs the result with the Accumulator" class="button buttonILLEGAL-STABLE" onclick="cmdDCP()">DCP</button></div>
-        <div><button title="Alias for JAM - These instructions freeze the CPU" class="button buttonILLEGAL-STABLE" onclick="cmdHLT()">HLT</button></div>
-        <div><button title="Alias for ISC - Increase memory by one then subtract memory from accumulator (with borrow)" class="button buttonILLEGAL-STABLE" onclick="cmdINS()">INS</button></div>
-        <div><button title="Alias for ISC - Increase memory by one then subtract memory from accumulator (with borrow)" class="button buttonILLEGAL-STABLE" onclick="cmdISB()">ISB</button></div>
-        <div><button title="Increase memory by one then subtract memory from accumulator (with borrow)" class="button buttonILLEGAL-STABLE" onclick="cmdISC()">ISC</button></div>
-        <div><button title="These instructions freeze the CPU" class="button buttonILLEGAL-STABLE" onclick="cmdJAM()">JAM</button></div>
-        <div><button title="Alias for JAM - These instructions freeze the CPU" class="button buttonILLEGAL-STABLE" onclick="cmdKIL()">KIL</button></div>
-        <div><button title="Alias for LAS - AND memory with stack pointer transfer result to accumulator" class="button buttonILLEGAL-UNSTABLE" onclick="cmdLAR()">LAR</button></div>
-        <div><button title="AND memory with stack pointer transfer result to accumulator" class="button buttonILLEGAL-UNSTABLE" onclick="cmdLAS()">LAS</button></div>
+        <div><button title="DECs a memory location then CMPs the result with the Accumulator" class="button buttonILLEGAL-STABLE" onclick="cmdDCP()">DCP (DCM)</button></div>
+        <div><button title="Increase memory by one then subtract memory from accumulator (with borrow)" class="button buttonILLEGAL-STABLE" onclick="cmdISC()">ISC (INS ISB)</button></div>
+        <div><button title="AND memory with stack pointer transfer result to accumulator" class="button buttonILLEGAL-UNSTABLE" onclick="cmdLAS()">LAS (LAR LAE)</button></div>
         <div><button title="Load the accumulator and the X register with contents of a memory location" class="button buttonILLEGAL-STABLE" onclick="cmdLAX()">LAX</button></div>
-        <div><button title="Alias for SRE - Shift right one bit in memory then EOR accumulator with memory" class="button buttonILLEGAL-STABLE" onclick="cmdLSE()">LSE</button></div>
-        <div><button title="Store * AND oper in A and X" class="button buttonILLEGAL-HIGHUNSTABLE" onclick="cmdLXA()">LXA</button></div>
-        <div><button title="Illegal NOP's Performs no operation" class="button buttonILLEGAL-STABLE" onclick="cmdILLEGALNOP()">NOP</button></div>
+        <div><button title="Store * AND oper in A and X" class="button buttonILLEGAL-HIGHUNSTABLE" onclick="cmdLXA()">LXA (LAX Imm)</button></div>
         <div><button title="Rotate one bit left in memory, then AND accumulator with memory" class="button buttonILLEGAL-STABLE" onclick="cmdRLA()">RLA</button></div>
         <div><button title="Rotate one bit right in memory then add memory to accumulator with carry" class="button buttonILLEGAL-STABLE" onclick="cmdRRA()">RRA</button></div>
-        <div><button title="AND the contents of the A and X registers" class="button buttonILLEGAL-STABLE" onclick="cmdSAX()">SAX</button></div>
-        <div><button title="Alias for SHY - Stores Y AND (high-byte of addr. + 1) at addr" class="button buttonILLEGAL-UNSTABLE" onclick="cmdSAY()">SAY</button></div>
-        <div><button title="Alias for USBC - Effectively same as normal SBC immediate, instr. E9" class="button buttonILLEGAL-STABLE" onclick="cmdSBC2()">SBC2</button></div>
-        <div><button title="CMP and DEX at once, sets flags like CMP" class="button buttonILLEGAL-STABLE" onclick="cmdSBX()">SBX</button></div>
-        <div><button title="Stores A AND X AND (high-byte of addr. + 1) at addr" class="button buttonILLEGAL-UNSTABLE" onclick="cmdSHA()">SHA</button></div>
-        <div><button title="Alias for TAS - Puts A AND X in SP and storesA AND X AND (high-byte of addr. + 1) at addr." class="button buttonILLEGAL-UNSTABLE" onclick="cmdSHS()">SHS</button></div>
-        <div><button title="Stores X AND (high-byte of addr. + 1) at addr" class="button buttonILLEGAL-UNSTABLE" onclick="cmdSHX()">SHX</button></div>
-        <div><button title="Stores Y AND (high-byte of addr. + 1) at addr" class="button buttonILLEGAL-UNSTABLE" onclick="cmdSHY()">SHY</button></div>
-        <div><button title="Shift left one bit in memory, then OR accumulator with memory" class="button buttonILLEGAL-STABLE" onclick="cmdSLO()">SLO</button></div>
-        <div><button title="Shift right one bit in memory then EOR accumulator with memory" class="button buttonILLEGAL-STABLE" onclick="cmdSRE()">SRE</button></div>
-        <div><button title="Alias for SHX - Stores X AND (high-byte of addr. + 1) at addr" class="button buttonILLEGAL-UNSTABLE" onclick="cmdSXA()">SXA</button></div>
-        <div><button title="Alias for SHY - Stores Y AND (high-byte of addr. + 1) at addr" class="button buttonILLEGAL-UNSTABLE" onclick="cmdSYA()">SYA</button></div>
-        <div><button title="Puts A AND X in SP and stores A AND X AND (high-byte of addr. + 1) at addr." class="button buttonILLEGAL-UNSTABLE" onclick="cmdTAS()">TAS</button></div>
-        <div><button title="Effectively same as normal SBC immediate, instr. E9" class="button buttonILLEGAL-STABLE" onclick="cmdUSBC()">USBC</button></div>
-        <div><button title="Alias for ANE - AND X + AND operand. Highly unstable, do not use" class="button buttonILLEGAL-HIGHUNSTABLE" onclick="cmdXAA()">XAA</button></div>
-        <div><button title="Alias for SHX - Stores X AND (high-byte of addr. + 1) at addr" class="button buttonILLEGAL-UNSTABLE" onclick="cmdXAS()">XAS</button></div>
+        <div><button title="AND the contents of the A and X registers" class="button buttonILLEGAL-STABLE" onclick="cmdSAX()">SAX (AXS AAX)</button></div>
+        <div><button title="CMP and DEX at once, sets flags like CMP" class="button buttonILLEGAL-STABLE" onclick="cmdSBX()">SBX (AXS SAX)</button></div>
+        <div><button title="Stores A AND X AND (high-byte of addr. + 1) at addr" class="button buttonILLEGAL-UNSTABLE" onclick="cmdSHA()">SHA (AHX AXA)</button></div>
+        <div><button title="Stores X AND (high-byte of addr. + 1) at addr" class="button buttonILLEGAL-UNSTABLE" onclick="cmdSHX()">SHX (A11 SXA XAS)</button></div>
+        <div><button title="Stores Y AND (high-byte of addr. + 1) at addr" class="button buttonILLEGAL-UNSTABLE" onclick="cmdSHY()">SHY (A11 SYA SAY)</button></div>
+        <div><button title="Shift left one bit in memory, then OR accumulator with memory" class="button buttonILLEGAL-STABLE" onclick="cmdSLO()">SLO (ASO)</button></div>
+        <div><button title="Shift right one bit in memory then EOR accumulator with memory" class="button buttonILLEGAL-STABLE" onclick="cmdSRE()">SRE (LSE)</button></div>
+        <div><button title="Puts A AND X in SP and stores A AND X AND (high-byte of addr. + 1) at addr." class="button buttonILLEGAL-UNSTABLE" onclick="cmdTAS()">TAS (XAS SHS)</button></div>
+        <div><button title="Effectively same as normal SBC immediate, instr. E9" class="button buttonILLEGAL-STABLE" onclick="cmdUSBC()">USBC (SBC2 SBC)</button></div>
+        <div><button title="Illegal NOP's Performs no operation" class="button buttonILLEGAL-STABLE" onclick="cmdILLEGALNOP()">NOP</button></div>
+        <div><button title="These instructions freeze the CPU" class="button buttonILLEGAL-STABLE" onclick="cmdJAM()">JAM (KIL HLT)</button></div>
       </div>
-      <br>
 
       <div><button id="legal-illegal-button" title="View List of All C64 Legal Opcodes" class="button buttonMAIN" onclick="cmdVIEWALL()">View All Legal Opcodes</button></div>
 

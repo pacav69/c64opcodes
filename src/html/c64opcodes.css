@@ -237,6 +237,17 @@ h6 {
   text-align: center;
 }
 
+.view-all-illegal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%);
+  grid-template-rows: repeat(13, 45px);
+  width: 100%;
+  position: relative;
+  text-align: center;
+  padding-top: 1rem;
+  padding-top: 1rem;
+}
+
 #legal-illegal-button {
   margin: 0 auto;
   display: block;
@@ -392,19 +403,19 @@ table.modes td {
 .buttonILLEGAL-STABLE {
   background-color: rgb(225, 255, 225);
   color: black;
-  width: 75px;
+  width: 200px;
 }
 
 .buttonILLEGAL-UNSTABLE {
   background-color: rgb(255, 250, 185);
   color: black;
-  width: 75px;
+  width: 200px;
 }
 
 .buttonILLEGAL-HIGHUNSTABLE {
   background-color: rgb(255, 200, 190);
   color: black;
-  width: 75px;
+  width: 200px;
 }
 
 .buttonOPCODE:hover {
