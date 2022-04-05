@@ -1,64 +1,71 @@
 {
-    "name": "c64opcodes",
-    "displayName": "C64 Opcodes",
-    "description": "C64 Opcodes Helper",
-    "publisher": "willasm",
-    "author": {
-        "name": "William McKeever"
-    },
-    "license": "MIT - SEE LICENSE IN LICENSE.md",
-    "version": "0.0.2",
-    "engines": {
-        "vscode": "^1.62.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "icon": "images/icon.png",
-    "keywords": [
-        "opcodes",
-        "mnemonics",
-        "c64",
-        "commodore",
-        "asm",
-        "assembly",
-        "programming",
-        "breadbin"
-    ],
-    "activationEvents": [
-        "onCommand:c64opcodes.openOpcodesList"
-    ],
-    "bugs": {
-        "url": "https://github.com/willasm/c64opcodes/issues",
-        "email": "willmck63@gmail.com"
-    },
-    "homepage": "https://github.com/willasm/c64opcodes",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/willasm/c64opcodes.git"
-    },
-    "main": "src/extension.js",
-    "contributes": {
-        "commands": [{
-            "command": "c64opcodes.openOpcodesList",
-            "title": "Open C64 Opcodes List"
-        }],
-        "configuration": [{
-            "title": "View C64 Opcodes",
-            "properties": {
-                "c64opcodes.useC64Font": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Display text using C64 Font"
-                },
-                "c64opcodes.useSidePanel": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "View Opcode information in side panel"
-                }
-            }
-        }]
-    },
-    "scripts": {},
-    "devDependencies": {}
+	"name": "c64opcodes",
+	"displayName": "C64 Opcodes",
+	"description": "C64 Opcodes Helper",
+	"publisher": "willasm",
+	"author": {
+		"name": "William McKeever"
+	},
+	"license": "MIT - SEE LICENSE IN LICENSE.md",
+	"version": "0.0.2",
+	"engines": {
+		"vscode": "^1.62.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon": "images/icon.png",
+	"keywords": [
+		"opcodes",
+		"mnemonics",
+		"c64",
+		"commodore",
+		"asm",
+		"assembly",
+		"programming",
+		"breadbin",
+		"6502",
+		"6510",
+		"MOS"
+	],
+	"activationEvents": [
+		"onCommand:c64opcodes.openOpcodesList"
+	],
+	"bugs": {
+		"url": "https://github.com/willasm/c64opcodes/issues",
+		"email": "willmck63@gmail.com"
+	},
+	"homepage": "https://github.com/willasm/c64opcodes",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/willasm/c64opcodes.git"
+	},
+	"main": "src/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "c64opcodes.openOpcodesList",
+				"title": "Open C64 Opcodes List"
+			}
+		],
+		"configuration": [
+			{
+				"title": "View C64 Opcodes",
+				"properties": {
+					"c64opcodes.useC64Font": {
+						"type": "boolean",
+						"default": false,
+						"description": "Display text using C64 Font"
+					},
+					"c64opcodes.useSidePanel": {
+						"type": "boolean",
+						"default": true,
+						"description": "View Opcode information in side panel"
+					}
+				}
+			}
+		]
+	},
+	"scripts": {},
+	"devDependencies": {}
 }
