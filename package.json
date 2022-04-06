@@ -23,7 +23,10 @@
         "asm",
         "assembly",
         "programming",
-        "breadbin"
+        "breadbin",
+        "6502",
+        "6510",
+        "MOS"
     ],
     "activationEvents": [
         "onCommand:c64opcodes.openOpcodesList"

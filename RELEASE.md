@@ -3,7 +3,7 @@
 
 <!-- ## [v-inc] ${YEAR4}-${MONTHNUMBER}-${DATE} -->
 
-## [0.0.2] 2022-04-05
+## [0.0.2] 2022-04-06
 ### Added
 - Illegal Opcodes
 ### Updated 
