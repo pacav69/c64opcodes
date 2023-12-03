@@ -1,14 +1,11 @@
 # Release Notes
-# Release Notes
 
 <!-- ## [v-inc] ${YEAR4}-${MONTHNUMBER}-${DATE} -->
 
-## [0.0.2] 2022-04-06
-### Added
-- Illegal Opcodes
-### Updated 
-- HTML Content
-- Readme.md
+## [1.0.0] 2023-12-03
+### Fixed
+- Resources were failing to load (CSS, Images, Script)
+
 
 For a full list of changes, please see the projects [Changelog](CHANGELOG.md) file.
 

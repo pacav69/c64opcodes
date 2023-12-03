@@ -7,6 +7,8 @@ const settings = vscode.workspace.getConfiguration("c64opcodes");
 const useC64Font = settings.get("useC64Font");
 const useC64SidePanel = settings.get("useSidePanel");
 
+let extensionContext;
+
 //  ╭──────────────────────────────────────────────────────────────────────────────╮
 //  │                            ● Function activate ●                             │
 //  │                                                                              │
@@ -15,6 +17,7 @@ const useC64SidePanel = settings.get("useSidePanel");
 function activate(context) {
 
     // • Track currently webview panel • 
+    extensionContext = context;
     let webviewPanel = undefined;
     context.subscriptions.push(vscode.commands.registerCommand('c64opcodes.openOpcodesList', () => {
         if (webviewPanel) {
@@ -42,22 +45,18 @@ function activate(context) {
         // const nonce = getNonce();
         //---------------------------------------------
 
-        // • Local path to main script run in the webview • 
-        const scriptPathOnDisk = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', 'main.js'));
-        // • And the uri we use to load this script in the webview • 
-        const scriptUri = (scriptPathOnDisk).with({ 'scheme': 'vscode-resource' });
-        // • Get path to C64 Font resource on disk • 
-        const fontc64opcodesPath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', 'c64font.ttf'));
-        // • Uri to load C64 Font into webview • 
-        const fontc64opcodesUri = (fontc64opcodesPath).with({ 'scheme': 'vscode-resource' });
-        // • Get path to CSS resource on disk • 
-        const stylesc64opcodesPath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', 'c64opcodes.css'));
-        // • Uri to load styles into webview • 
-        const stylesc64opcodesUri = (stylesc64opcodesPath).with({ 'scheme': 'vscode-resource' });
-        // • Get path to C64 screen image resource on disk • 
-        const imgc64screenPath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', 'c64_mainscreen.gif'));
-        // • Uri to load styles into webview • 
-        const imgc64screenUri = (imgc64screenPath).with({ 'scheme': 'vscode-resource' });
+        // • Get Uri to load script in the webview • 
+        const scriptUri = getUri("main.js", webviewPanel);
+
+        // • Get Uri to load C64 Font into webview • 
+        const fontc64opcodesUri = getUri("c64font.ttf", webviewPanel);
+
+        // • Get Uri to load styles into webview • 
+        const stylesc64opcodesUri = getUri("c64opcodes.css", webviewPanel);
+
+        // • Get Uri to load styles into webview • 
+        const imgc64screenUri = getUri("c64_mainscreen.gif", webviewPanel);
+
         // • Get word under cursor for (name).html file • 
         let editor = vscode.window.activeTextEditor;
         if (!editor) {
@@ -219,7 +218,6 @@ function activate(context) {
         } else {
             const htmlFilePath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'html', 'index.html'));
             var localhtml = fs.readFileSync(htmlFilePath.fsPath, 'utf8').toString();
-            // webviewPanel.webview.html = getOpcodeHomeContent();
             localhtml = localhtml.replace('${stylesc64opcodesUri}', stylesc64opcodesUri.toString());
             localhtml = localhtml.replace('${scriptUri}', scriptUri.toString());
             // localhtml = localhtml.replace('${nonce}', nonce);
@@ -241,7 +239,13 @@ function activate(context) {
                 localhtml = localhtml.replace('${stylesc64opcodesUri}', stylesc64opcodesUri.toString());
                 localhtml = localhtml.replace('${scriptUri}', scriptUri.toString());
                 // localhtml = localhtml.replace('${nonce}', nonce);
+                if (message.command != 'index') {
+                    if (useC64Font) {
+                        localhtml = localhtml.replace('/*C64FONT*/', '@font-face {\nfont-family: c64font;\nsrc: url("${fontc64opcodesUri}");\n}\np {\nfont-family: c64font;\n}');
+                    }
+                };
                 localhtml = localhtml.replace('${imgc64screenUri}', imgc64screenUri.toString());
+                localhtml = localhtml.replace('${fontc64opcodesUri}', fontc64opcodesUri.toString());
                 webviewPanel.webview.html = localhtml;
                 webviewPanel.title = 'C64 Opcodes - ' + message.pageTitle;
             }
@@ -249,23 +253,24 @@ function activate(context) {
     }));
 }
 
-function getOpcodeHomeContent() {
-    return `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C64 Opcodes List</title>
-</head>
-<body>
-   <h1>Show Opcode List</h1>
-   <button class="button button1">Green</button>
-   <button class="button button2">Blue</button>
-   <img src="C:/c64/code/my_code/c64opcodes/src/html/rolgraf1.png" width="300" />
-   <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
-  </body>
-</html>`;
-}
+// function getOpcodeHomeContent() {
+//     return `<!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>C64 Opcodes List Internal HTML</title>
+// </head>
+// <body>
+//    <h1>Show Opcode List</h1>
+//    <button class="button button1">Green</button>
+//    <button class="button button2">Blue</button>
+//    <img src="src/html/c64_mainscreen.gif"/>
+//    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
+//   </body>
+// </html>`;
+// }
+
 // function getNonce() {
 // 	let text = '';
 // 	const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -275,6 +280,21 @@ function getOpcodeHomeContent() {
 // 	return text;
 // }
 // this method is called when your extension is deactivated
+
+//  ╭──────────────────────────────────────────────────────────────────────────────╮
+//  │                             ● Function getUri ●                              │
+//  │                                                                              │
+//  │             • Get the Webview-Compliant URI for the Resources  •             │
+//  │                                                                              │
+//  │                   • CSS, Images, Font and Main.js Script •                   │
+//  ╰──────────────────────────────────────────────────────────────────────────────╯
+function getUri(filename,panel) {
+    const onDiskPath = vscode.Uri.file(
+      path.join(extensionContext.extensionPath, "src", "html", filename)
+    );
+    const src = panel.webview.asWebviewUri(onDiskPath);
+    return src;
+}
 
 //  ╭──────────────────────────────────────────────────────────────────────────────╮
 //  │                           ● Function deactivate ●                            │

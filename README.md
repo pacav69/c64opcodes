@@ -1,15 +1,18 @@
-![](https://vsmarketplacebadge.apphb.com/version-short/willasm.c64opcodes.svg)
-![](https://vsmarketplacebadge.apphb.com/installs-short/willasm.c64opcodes.svg)
-![](https://vsmarketplacebadge.apphb.com/downloads-short/willasm.c64opcodes.svg)
-![](https://vsmarketplacebadge.apphb.com/rating/willasm.c64opcodes.svg)
+![](https://img.shields.io/visual-studio-marketplace/v/willasm.c64opcodes)
+![](https://img.shields.io/visual-studio-marketplace/d/willasm.c64opcodes)
+![](https://img.shields.io/visual-studio-marketplace/r/willasm.c64opcodes)
+![](https://img.shields.io/visual-studio-marketplace/release-date/willasm.c64opcodes)
+![](https://img.shields.io/visual-studio-marketplace/last-updated/willasm.c64opcodes)
 
 # c64opcodes
 
 This extension for VSCode displays a Webview page with detailed information on 6502/6510 opcodes. To execute the extension run the command `Open C64 Opcodes List` from the command pallete. If the cursor is on an opcode when run, that opcodes detailed information will be displayed, otherwise the extensions menu page will load allowing you to browse the opcode lists.
 
+All normal and illegal opcodes are included.
+
 Note: The opcode text does not need to be selected, simply place the cursor on the opcode then run the command
 
-All normal and illegal opcodes are included.
+Tip: You may want to set a hotkey if you are going to use this extension often
 
 
 ## Features
@@ -24,17 +27,18 @@ All normal and illegal opcodes are included.
 ![Example Screenshot](./images/c64opcodes-demo.gif)
 
 
-## Requirements
-If you use [Kick Assembler](http://theweb.dk/KickAssembler/Main.html#frontpage)] I recommend using [Kick Assembler 8-Bit Retro Studio](https://marketplace.visualstudio.com/items?itemName=paulhocker.kick-assembler-vscode-ext) by Paul Hocker along with this extension.
+## Recomendations
+If you use [Kick Assembler](http://theweb.dk/KickAssembler/Main.html#frontpage) I recommend using [Kick Assembler 8-Bit Retro Studio](https://marketplace.visualstudio.com/items?itemName=paulhocker.kick-assembler-vscode-ext) by Paul Hocker along with this extension.
 
 ## Extension Settings
-`Use C64 Font` (False by default) Displays the webiew text using a Commodore 64 font.
+`Use C64 Font` (Off by default) Displays the webview text using a Commodore 64 font.
 
-`Use Side Panel` (True by default) Option to open the Opcode Webview in the current editor column, or in a side panel.
+`Use Side Panel` (On by default) Option to open the Opcode Webview in the current editor column, or in a side panel.
 
 
 ## Todo
 - Add more detailed information on other topics such as CPU, Flags, etc.
+- Add support for the Commander X16 additional opcodes for the 65c02 processor
 
 
 ## Release Notes

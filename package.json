@@ -7,9 +7,9 @@
         "name": "William McKeever"
     },
     "license": "MIT - SEE LICENSE IN LICENSE.md",
-    "version": "0.0.2",
+    "version": "1.0.0",
     "engines": {
-        "vscode": "^1.62.0"
+        "vscode": "^1.75.0"
     },
     "categories": [
         "Other"
@@ -28,9 +28,6 @@
         "6510",
         "MOS"
     ],
-    "activationEvents": [
-        "onCommand:c64opcodes.openOpcodesList"
-    ],
     "bugs": {
         "url": "https://github.com/willasm/c64opcodes/issues",
         "email": "willmck63@gmail.com"
@@ -47,7 +44,7 @@
             "title": "Open C64 Opcodes List"
         }],
         "configuration": [{
-            "title": "View C64 Opcodes",
+            "title": "C64 Opcodes",
             "properties": {
                 "c64opcodes.useC64Font": {
                     "type": "boolean",

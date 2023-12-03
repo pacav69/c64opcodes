@@ -1,3 +1,5 @@
 node_modules
 .vscode/*.MD
 NoMoreSecrets-NMOS6510UnintendedOpcodes-20162412.pdf
+BIN
+.pnotes
